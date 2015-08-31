@@ -9,7 +9,7 @@
 // Sauce:    https://docs.saucelabs.com/reference/test-configuration/
 
 module.exports = {
-    verbose: true,
+    verbose: false,
     expanded: true,
     simpleOutput: true,
     plugins: {
