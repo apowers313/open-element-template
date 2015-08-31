@@ -1,6 +1,6 @@
 {
-  "name": "open-element",
-  "version": "0.0.1",
+  "name": "open-element-template",
+  "version": "0.0.2",
   "description": "Open element template",
   "main": "open-element.html",
   "directories": {
