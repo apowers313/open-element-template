@@ -10,11 +10,12 @@ Delete everything below this line after forking or cloning
 Much like [Polymer boilerplate](https://github.com/webcomponents/polymer-boilerplate), [Polymer seed-element](https://github.com/polymerelements/seed-element), [generator element](https://github.com/webcomponents/generator-element), and others, this is a template for starting new projects. Sorry for calling it "template", since that broadly means something else for web components.
 
 So why another template for Polymer elements? This one has two ideas behind it:
+
 1. It makes use of all the services that support open source projects, such as [Travis](https://travis-ci.org/) for testing, [SauceLabs](https://saucelabs.com/home) for cross-browser testing, some badges and other stuff. Figuring out how to setup and integrate these services can take time and isn't fun or productive.
 2. If you fork or clone from this repository, you can merge in new services and features into your component as they become available. You don't have to figure it out, just `git pull` to merge in the new features and you will get anything new that has been added. This can be new features, new documentation, new badges, etc.
 
 # Features
-* [Web Component Testing](https://github.com/Polymer/web-component-tester) setup and configuration
+* [Web Component Tester](https://github.com/Polymer/web-component-tester) setup and configuration
 * [Travis CI](https://travis-ci.org/) configuration file
 * [SauceLabs](https://saucelabs.com/home) integration for multi-browser testing
 * `web-components` keyword for inclusion on [customelements.io](https://customelements.io/)
@@ -35,7 +36,16 @@ So why another template for Polymer elements? This one has two ideas behind it:
 # Things to Try
 * `npm test` -- uses the [web component tester](https://github.com/Polymer/web-component-tester) to open browsers at SauceLabs and test your element on each of them
 * `npm run demo` -- shows your new element in action
-* `npm run testdebug` -- runs a single test using your local copy of Chrome, and keeps Chrome open so that you can see the debug console and refresh to re-run tests
+* `npm run testdebug` -- runs a single pass of the tests using your local copy of Chrome, and keeps Chrome open so that you can see the debug console and refresh to re-run tests
+
+# How to Make This Your Own
+1. Edit [open-element.html](open-element.html). Add some HTML between the `<template>` tags to include new HTML in your element. Customize the `Polymer()` JavaScript to add new properties or functionality to your element. Want some help getting started? Check out the [Polymer Developer Guide](https://www.polymer-project.org/1.0/docs/devguide/feature-overview.html).
+2. Now if you run `npm run demo` you'll see your changes. And if you run `npm test` you'll notice... whoops! You broke the tests! Edit [test/open-element.html](test/open-element.html) to update your tests. Tests are using the [Web Component Tester](https://github.com/Polymer/web-component-tester), which uses [Mocha](http://mochajs.org/) as a test framework, [Chai](http://chaijs.com/) for assertions, and [Sinon](http://sinonjs.org/) for other stuff -- especially mocking servers. Don't forget to use `npm run testdebug` if your tests aren't doing what you expect.
+3. Repeat #1 and #2 until you have something cool. Or #2 then #1. It's up to you. Have fun!
+4. Edit [package.json](package.json) and [bower.json](bower.json) to describe your package, have your email address, your version, etc.
+5. Edit [README.md](README.md) and [LICENSE](LICENSE) to your liking
+6. Run `git commit -am "I'm committed"` and `git push origin master` to push your changes back to GitHub. Watch with delight as Travis and SauceLabs do their thing.
+7. Pat yourself on the back and drink a beer.
 
 # Updating
 Are there new features in this repo that you wish you had? If you forked or cloned from this project, here's how to merge them into your project:
