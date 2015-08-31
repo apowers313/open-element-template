@@ -1,0 +1,37 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="open-element">
+    <style>
+
+    </style>
+    <template>
+        Hello world!<br>
+        The open-element HTML goes here...
+    </template>
+    <script>
+    Polymer({
+        is: 'open-element',
+
+        properties: {
+            testProperty: {
+                type: String,
+                value: "this is the initial value",
+                // notify: true,
+                // reflectToATtribute: true,
+                // observer: "observerFunction(someProperty)",
+                // computed: "computedFunction(someProperty)",
+                // readOnly: true,
+            },
+            // someProperty ...
+        },
+
+        // observerFunction (val) {
+            // do stuff
+        // },
+
+        // computedFunction (val) {
+            // do stuff
+        // }
+    });
+    </script>
+</dom-module>

@@ -1,0 +1,27 @@
+{
+  "name": "open-element",
+  "version": "0.0.0",
+  "authors": [
+    "Adam Powers <apowers@ato.ms>"
+  ],
+  "description": "Open element template",
+  "main": "open-element.html",
+  "keywords": [
+    "web-components",
+    "Polymer"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.1"
+  },
+  "devDependencies": {
+    "test-fixture": "PolymerElements/test-fixture#^1.0.0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "open-element",
+  "version": "0.0.1",
+  "description": "Open element template",
+  "main": "open-element.html",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/bower install && ln -s `pwd` ./bower_components/open-element",
+    "test": "cd ./bower_components/open-element && ./node_modules/.bin/wct --simpleOutput --sauce default",
+    "testdebug": "./node_modules/.bin/wct -p -l chrome",
+    "demo": "open http://localhost:8000/components/open-element/demo/index.html; ./node_modules/.bin/polyserve -p 8000",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apowers313/open-element-template.git"
+  },
+  "author": "apowers@ato.ms",
+  "license": "MIT",
+  "loglevel": "info",
+  "bugs": {
+    "url": "https://github.com/apowers313/open-element-template/issues"
+  },
+  "homepage": "https://github.com/apowers313/open-element-template#readme",
+  "dependencies": {
+    "bower": "^1.5.2",
+    "polyserve": "^0.4.0",
+    "web-component-tester": "^3.3.15"
+  }
+}

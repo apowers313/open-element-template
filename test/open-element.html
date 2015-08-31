@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>open-element tests</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../test-fixture/test-fixture-mocha.js"></script>
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../../test-fixture/test-fixture.html">
+    <link rel="import" href="../open-element.html">
+</head>
+
+<body>
+    <test-fixture id="testElement">
+        <template>
+            <open-element></open-element>
+        </template>
+    </test-fixture>
+    <test-fixture id="anotherTest">
+        <template>
+            <open-element test-property="I like beer"></open-element>
+        </template>
+    </test-fixture>
+    <script>
+    suite('basic string tests', function() {
+
+
+        test("check default value", function() {
+            var openElem = fixture('testElement');
+
+            assert.strictEqual(openElem.testProperty, "this is the initial value", "initial test string should be 'this is the initial value'");
+
+            openElem.testProperty = "I like pudding";
+            console.log ("You can see this in the console. Try `npm run testdebug` to keep the browser open:", openElem.testProperty);
+
+            assert.strictEqual(openElem.testProperty, "I like pudding", "test string should be 'I like pudding'");
+        });
+
+        test("check value set in tag", function() {
+            var openElem = fixture('anotherTest');
+
+            assert.strictEqual(openElem.testProperty, "I like beer", "test string should be 'I like beer'");
+        });
+
+        // Here's how to mock a server...
+        // var server;
+
+        // setup(function() {
+        //     server = sinon.fakeServer.create();
+        //     server.autoRespond = true;
+        //     server.autoRespondAfter = 0;
+        // });
+
+        // teardown(function() {
+        //     server.restore();
+        // });
+
+        // test("mock a URL and make sure it is handled right", function(done) {
+        //     var helperObj = {
+        //         foo: "bar",
+        //         a: 1,
+        //         b: ["c", "d"],
+        //         e: null,
+        //         f: true
+        //     };
+
+        //     server.respondWith("GET", "/local/path", [200, {
+        //         "Content-Type": "application/json"
+        //     }, JSON.stringify(helperObj)]);
+
+        //     var openElem = fixture('testElement');
+        //     Polymer.Base.async (function() {
+        //         assert.deepEqual (openElem.helperObj, helperObj, "element should have fetched its helperObj via a XHR request, which should be the exact same as the helperObj passed in");
+        //         done();
+        //     }, 1);
+        // });
+    });
+    </script>
+</body>
+
+</html>
