@@ -4,7 +4,8 @@
   "description": "Open element template",
   "main": "open-element.html",
   "directories": {
-    "test": "test"
+    "test": "test",
+    "demo": "demo"
   },
   "scripts": {
     "postinstall": "./node_modules/.bin/bower install && ln -s `pwd` ./bower_components/open-element",
@@ -24,7 +25,9 @@
   },
   "homepage": "https://github.com/apowers313/open-element-template#readme",
   "dependencies": {
-    "bower": "^1.5.2",
+    "bower": "^1.5.2"
+  },
+  "devDependencies": {
     "polyserve": "^0.4.0",
     "web-component-tester": "^3.3.15"
   }
