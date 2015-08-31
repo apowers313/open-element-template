@@ -1,11 +1,7 @@
-[![Join the chat at https://gitter.im/apowers313/open-element-template](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/apowers313/open-element-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status][http://img.shields.io/travis/apowers313/open-element-template/develop.svg?style=flat]][http://travis-ci.org/apowers313/open-element-template]
-[![Dependencies][https://david-dm.org/apowers313/open-element-template.svg]][https://david-dm.org/apowers313/open-element-template]
-[![Dev Dependencies][https://david-dm.org/apowers313/open-element-template/dev-status.svg]][https://david-dm.org/apowers313/open-element-template]
-[![NPM version][http://img.shields.io/npm/v/open-element-template.svg?style=flat]][https://npmjs.org/package/open-element-template]
-[![NPM downloads][http://img.shields.io/npm/dm/open-element-template.svg?style=flat]][https://npmjs.org/package/open-element-template]
-[![MIT License][http://img.shields.io/badge/license-MIT-blue.svg?style=flat]][LICENSE]
-<!-- [![Coverage Status](https://coveralls.io/repos/apowers313/open-element-template/badge.svg?branch=master)](https://coveralls.io/r/apowers313/open-element-template?branch=master) -->
+[![Join the chat at https://gitter.im/apowers313/open-element-template](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/apowers313/open-element-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![Build Status](https://travis-ci.org/apowers313/open-element-template.svg?branch=master)](https://travis-ci.org/apowers313/open-element-template)  [![Dependencies](https://david-dm.org/apowers313/open-element-template.svg)](https://david-dm.org/apowers313/open-element-template)  [![Dev Dependencies](https://david-dm.org/apowers313/open-element-template/dev-status.svg)](https://david-dm.org/apowers313/open-element-template)  
+[![NPM version](http://img.shields.io/npm/v/open-element-template.svg?style=flat)](https://npmjs.org/package/open-element-template)  [![NPM downloads](http://img.shields.io/npm/dm/open-element-template.svg?style=flat)](https://npmjs.org/package/open-element-template)
+
 
 ---------------------------------------
 Delete everything below this line after forking or cloning
@@ -36,15 +32,11 @@ So why another template for Polymer elements? This one has two ideas behind it:
 2. SauceLabs
 	* [Create account](https://saucelabs.com/signup/plan/OSS)
 	* Add secret keys to .travis.yml by following [this link](https://docs.saucelabs.com/ci-integrations/travis-ci/)
-<!-- 3. Coveralls
-	* Create account
-	* Link with Travis CI -->
 
 # Things to Try
-* `npm test`
-* `npm run debug`
-* `npm run testdebug`
-* `npm demo`
+* `npm test` -- uses the [web component tester](https://github.com/Polymer/web-component-tester) to open browsers at SauceLabs and test your element on each of them
+* `npm run demo` -- shows your new element in action
+* `npm run testdebug` -- runs a single test using your local copy of Chrome, and keeps Chrome open so that you can see the debug console and refresh to re-run tests
 
 # Updating
 Are there new features in this repo that you wish you had? If you forked or cloned from this project, here's how to merge them into your project:
