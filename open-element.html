@@ -1,3 +1,20 @@
+<script>
+/**
+ * An example Polymer element. Feel free to change it up.
+ * Documents for Polymer can be found here:
+ * * [Polymer Base API](http://polymer.github.io/polymer/)
+ * * [Polymer Developer Guide](https://www.polymer-project.org/1.0/docs/devguide/feature-overview.html)
+ *
+ * Note that element names (e.g. - open-element) must contain a dash (-).
+ *
+ * By the way, this is documentation. For details check out
+ * [the YUIDoc syntax](http://yui.github.io/yuidoc/syntax/)
+ * and the results are in ./docs. Also note the new `@element` tag 
+ * (which we should really be using here...)
+ *
+ * @class open-element
+ */
+</script>
 <link rel="import" href="../polymer/polymer.html">
 
 <dom-module id="open-element">
@@ -5,13 +22,22 @@
 
     </style>
     <template>
-        Hello world!<br>
-        The open-element HTML goes here...
+        Hello world!
+        <br> The open-element HTML goes here...
     </template>
     <script>
     Polymer({
         is: 'open-element',
 
+        /**
+         * Just a testProperty to show how properties work in Polymer.
+         * It is probably pretty safe to delete this, or comment it out
+         * and keep it around as a reference.
+         * 
+         * @property testProperty
+         * @type String
+         * @default "this is the initial value"
+         */
         properties: {
             testProperty: {
                 type: String,
@@ -26,11 +52,11 @@
         },
 
         // observerFunction (val) {
-            // do stuff
+        // do stuff
         // },
 
         // computedFunction (val) {
-            // do stuff
+        // do stuff
         // }
     });
     </script>

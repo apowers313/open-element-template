@@ -65,8 +65,9 @@
 
 **/node_modules
 **/bower_components
+components
 coverage
-
+docs
 
 
 ################################################
