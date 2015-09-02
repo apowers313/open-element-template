@@ -15,7 +15,7 @@ if [ -z "$TRAVIS_REPO_SLUG" ]; then
 	exit 1
 fi
 
-GH_REF=github.com/$(TRAVIS_REPO_SLUG).git
+GH_REF=github.com/$TRAVIS_REPO_SLUG.git
 if [ -z "$GH_REF" ]; then
 	echo "GH_REF is not set. Set it in the form \"github.com/<username>/<repo>.git\""
 	exit 1
