@@ -21,8 +21,11 @@ So why another template for Polymer elements? This one has three ideas behind it
 * [Travis CI](https://travis-ci.org/) configuration file
 * [SauceLabs](https://saucelabs.com/home) integration for multi-browser testing
 * [YUIDoc](http://yui.github.io/yuidoc/) for inline document generation
-* `web-components` keyword for inclusion on [customelements.io](https://customelements.io/)
-* Nifty badges already included for build status, [David](https://david-dm.org/) dependency status, and [Gitter](https://gitter.im)
+* [GitHub Pages](https://pages.github.com/) for hosted API documentation
+* [customelements.io](https://customelements.io/) keywords to publish the element where people can see it
+* [David](https://david-dm.org/) dependency status
+* [Gitter](https://gitter.im) for conversation about your element
+* Nifty badges for many of the projects above
 * Forking this repo means that as new features are added, they can be included in your project with a simple `git pull` request
 
 __If there are features or services that you think should be here, I am happy to take requests. Feel free to [submit an issue](https://github.com/apowers313/open-element-template/issues) or send in a pull request.__ 
@@ -36,13 +39,19 @@ __If there are features or services that you think should be here, I am happy to
 		* `git clone https://github.com/apowers313/open-element-template.git .` -- clone it into the current (empty) directory of your new project (note the trailing '.')
 		* `git remote set-url origin https://github.com/yourname/new-project.git` -- change your GitHub remote to your project on GitHub
 		* `git push origin master` -- push the tempalte up to your repository
+	* Optionally: Watch this GitHub repo by clicking the `Watch` button in the top-right hand corner of [this webpage](https://github.com/apowers313/open-element-template) so that you will be informed of changes as they occur.
 1. Travis CI
 	* Login using Githubaccount by clicking `Sign in with GitHub` in the top right-hand corner of [Travis CI webpage](https://travis-ci.org/) 
 	* Click `+` next to `Repositories`
 	* Turn on Travis CI for your fork
-2. SauceLabs
+1. SauceLabs
 	* [Create account](https://saucelabs.com/signup/plan/OSS)
 	* Add secret keys to .travis.yml by following [this link](https://docs.saucelabs.com/ci-integrations/travis-ci/)
+1. GitHub Pages
+	* `npm run create-travis-deploy-key` -- this command will open up a browser to the [GitHub New Personal Token Page](https://github.com/settings/tokens/new) and prompt you to enter it on the command line. The default scopes and options for the GitHub personal token should be fine. After the command completes, you should have a new line in your `.travis.yml` file that contains the encrypted GitHub token.
+	* `git commit .travis.yml -m "Added GitHub pages key"` -- commit the new Travis config
+	* `git push origin master` -- push the new Travis config up to GitHub, which should trigger a new build and push the docs folder to GitHub Pages
+	* Optionally: `export GH_TOKEN=<your GitHub token>` -- set key as an environment variable if you ever want to run `npm deploydocs` locally. Add it to your `~/.profile` if you want to always have it set.
 
 ## Things to Try
 * `npm test` -- uses the [web component tester](https://github.com/Polymer/web-component-tester) to open browsers at SauceLabs and test your element on each of them
@@ -50,7 +59,9 @@ __If there are features or services that you think should be here, I am happy to
 * `npm run testdebug` -- runs a single pass of the tests using your local copy of Chrome, and keeps Chrome open so that you can see the debug console and refresh to re-run tests
 * `npm run testlocal` -- runs tests in all browsers that are installed on your system
 * `npm run docs` -- generate docs for your components and store them in the ./docs directory
+* `npm run deploydocs` -- deploy your documentation to GitHub (requires that the `GH_TOKEN` environment variable be set to your GitHub personal token, created above)
 * `npm run testdocs` -- generate docs for your components, and fire up a webserver and a browser to view them -- great for testing your docs as you are writing them
+* Check in your code to automatically test it, build documentation, and deploy documentation
 
 ## How to Make This Your Own
 1. Edit [open-element.html](open-element.html). Add some HTML between the `<template>` tags to include new HTML in your element. Customize the `Polymer()` JavaScript to add new properties or functionality to your element. Want some help getting started? Check out the [Polymer Developer Guide](https://www.polymer-project.org/1.0/docs/devguide/feature-overview.html).
