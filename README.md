@@ -22,6 +22,7 @@ So why another template for Polymer elements? This one has three ideas behind it
 * [SauceLabs](https://saucelabs.com/home) integration for multi-browser testing
 * [YUIDoc](http://yui.github.io/yuidoc/) for inline document generation
 * [GitHub Pages](https://pages.github.com/) for hosted API documentation, for example see the [sample docs for open-element-template](http://apowers313.github.io/open-element-template/)
+* [Istanbul](https://gotwarlost.github.io/istanbul/) and [WCTI](https://www.npmjs.com/package/web-component-tester-istanbul) code coverage, for exmaple see the [code coverage report for open-element-template](http://apowers313.github.io/open-element-template/coverage). (Currently only works for .js files, not JavaScript embedded in HTML)
 * [customelements.io](https://customelements.io/) keywords to publish the element where people can see it
 * [David](https://david-dm.org/) dependency status
 * [Gitter](https://gitter.im) for conversation about your element
@@ -47,17 +48,19 @@ __If there are features or services that you think should be here, I am happy to
 1. SauceLabs
 	* [Create account](https://saucelabs.com/signup/plan/OSS)
 	* Add secret keys to .travis.yml by following [this link](https://docs.saucelabs.com/ci-integrations/travis-ci/)
+	* Optionally: `export SAUCE_USERNAME=<your username>; export SAUCE_ACCESS_KEY=<your key>` -- set key as an SAUCE_USERNAME and SAUCE_ACCESS_KEY environment variables if you ever want to run `npm test` locally. Add them to your `~/.profile` if you want to always have them set.
 1. GitHub Pages
 	* `npm run create-travis-deploy-key` -- this command will open up a browser to the [GitHub New Personal Token Page](https://github.com/settings/tokens/new) and prompt you to enter it on the command line. The default scopes and options for the GitHub personal token should be fine. After the command completes, you should have a new line in your `.travis.yml` file that contains the encrypted GitHub token.
 	* `git commit .travis.yml -m "Added GitHub pages key"` -- commit the new Travis config
-	* `git push origin master` -- push the new Travis config up to GitHub, which should trigger a new build and push the docs folder to GitHub Pages. You should be able to see your docs at: http://<YOUR NAME>.github.io/<YOUR PROJECT>/ . For example, see the [docs for the open-element-template](http://apowers313.github.io/open-element-template/)
+	* `git push origin master` -- push the new Travis config up to GitHub, which should trigger a new build and push the docs folder to GitHub Pages. You should be able to see your docs at: http://<YOUR NAME>.github.io/<YOUR PROJECT>/ . For example, see the [docs for the open-element-template](http://apowers313.github.io/open-element-template/). Note, docs will only deploy if the tests ran successfully.
 	* Optionally: `export GH_TOKEN=<your GitHub token>` -- set key as an environment variable if you ever want to run `npm deploydocs` locally. Add it to your `~/.profile` if you want to always have it set.
 
 ## Things to Try
 * `npm test` -- uses the [web component tester](https://github.com/Polymer/web-component-tester) to open browsers at SauceLabs and test your element on each of them
 * `npm run demo` -- shows your new element in action
 * `npm run testdebug` -- runs a single pass of the tests using your local copy of Chrome, and keeps Chrome open so that you can see the debug console and refresh to re-run tests
-* `npm run testlocal` -- runs tests in all browsers that are installed on your system
+* `npm run localtest` -- runs tests in all browsers that are installed on your system
+* `npm run viewcoverage` -- view your code coverage report (caveats: requires a successful test run, currently only works for standalone .js files, not JavaScript embedded in .html files)
 * `npm run docs` -- generate docs for your components and store them in the ./docs directory
 * `npm run deploydocs` -- deploy your documentation to GitHub (requires that the `GH_TOKEN` environment variable be set to your GitHub personal token, created above)
 * `npm run testdocs` -- generate docs for your components, and fire up a webserver and a browser to view them -- great for testing your docs as you are writing them

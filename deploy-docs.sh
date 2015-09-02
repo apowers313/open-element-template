@@ -24,6 +24,11 @@ fi
 echo "Building docs ..."
 npm run docs
 
+if [ -d coverage ]; then
+	echo "Moving coverage ..."
+	mv coverage docs
+fi
+
 echo "Uploading docs to: " $GH_REF ...
 
 # go to the out directory and create a new git repo

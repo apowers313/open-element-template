@@ -23,16 +23,17 @@ module.exports = {
             disabled: false,
             // browsers: ['chrome', 'firefox', 'safari', 'ie']
         },
-        // "web-component-tester-istanbul": {
-        //     dir: "./coverage",
-        //     reporters: ["text-summary", "lcov"],
-        //     // include: [
-        //     //     "**/*.js"
-        //     // ],
-        //     // exclude: [
-        //     //     "/polymer/polymer.js"
-        //     //     "/platform/platform.js"
-        //     // ]
-        // }
+        "istanbul": {
+            dir: "coverage",
+            reporters: ["text-summary", "lcov", "html"],
+            include: [
+                "**/*.js"
+            ],
+            exclude: [
+                "/polymer/polymer.js",
+                "/webcomponents/webcomponents.js",
+                "/bower_components/**/*.js"
+            ]
+        }
     },
 };

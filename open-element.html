@@ -16,6 +16,7 @@
  */
 </script>
 <link rel="import" href="../polymer/polymer.html">
+<script src="./test.js"></script>
 
 <dom-module id="open-element">
     <style>
@@ -24,6 +25,7 @@
     <template>
         Hello world!
         <br> The open-element HTML goes here...
+        <br> Example data binding: <span>{{testProperty}}</span>
     </template>
     <script>
     Polymer({
@@ -41,9 +43,9 @@
         properties: {
             testProperty: {
                 type: String,
-                value: "this is the initial value",
+                value: getInitialValue()
                 // notify: true,
-                // reflectToATtribute: true,
+                // reflectToAttribute: true,
                 // observer: "observerFunction(someProperty)",
                 // computed: "computedFunction(someProperty)",
                 // readOnly: true,
