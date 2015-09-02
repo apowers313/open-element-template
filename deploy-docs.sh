@@ -1,6 +1,5 @@
 #!/bin/bash
 # https://github.com/settings/tokens
-GH_TOKEN=b29d7ea4479b4a803292b4ab4a1610ec578793b1
 
 if [ -z "$GH_TOKEN" ]; then
 	echo "GH_TOKEN not set, please visit https://github.com/settings/tokens to get a token and then set the environment variable"
