@@ -21,7 +21,7 @@ So why another template for Polymer elements? This one has three ideas behind it
 * [Travis CI](https://travis-ci.org/) configuration file
 * [SauceLabs](https://saucelabs.com/home) integration for multi-browser testing
 * [YUIDoc](http://yui.github.io/yuidoc/) for inline document generation
-* [GitHub Pages](https://pages.github.com/) for hosted API documentation
+* [GitHub Pages](https://pages.github.com/) for hosted API documentation, for example see the [sample docs for open-element-template](http://apowers313.github.io/open-element-template/)
 * [customelements.io](https://customelements.io/) keywords to publish the element where people can see it
 * [David](https://david-dm.org/) dependency status
 * [Gitter](https://gitter.im) for conversation about your element
@@ -50,7 +50,7 @@ __If there are features or services that you think should be here, I am happy to
 1. GitHub Pages
 	* `npm run create-travis-deploy-key` -- this command will open up a browser to the [GitHub New Personal Token Page](https://github.com/settings/tokens/new) and prompt you to enter it on the command line. The default scopes and options for the GitHub personal token should be fine. After the command completes, you should have a new line in your `.travis.yml` file that contains the encrypted GitHub token.
 	* `git commit .travis.yml -m "Added GitHub pages key"` -- commit the new Travis config
-	* `git push origin master` -- push the new Travis config up to GitHub, which should trigger a new build and push the docs folder to GitHub Pages
+	* `git push origin master` -- push the new Travis config up to GitHub, which should trigger a new build and push the docs folder to GitHub Pages. You should be able to see your docs at: http://<YOUR NAME>.github.io/<YOUR PROJECT>/ . For example, see the [docs for the open-element-template](http://apowers313.github.io/open-element-template/)
 	* Optionally: `export GH_TOKEN=<your GitHub token>` -- set key as an environment variable if you ever want to run `npm deploydocs` locally. Add it to your `~/.profile` if you want to always have it set.
 
 ## Things to Try
@@ -64,10 +64,10 @@ __If there are features or services that you think should be here, I am happy to
 * Check in your code to automatically test it, build documentation, and deploy documentation
 
 ## How to Make This Your Own
-1. Edit [open-element.html](open-element.html). Add some HTML between the `<template>` tags to include new HTML in your element. Customize the `Polymer()` JavaScript to add new properties or functionality to your element. Want some help getting started? Check out the [Polymer Developer Guide](https://www.polymer-project.org/1.0/docs/devguide/feature-overview.html).
+1. Edit [open-element.html](open-element.html). Add some HTML between the `<template>` tags to include new HTML in your element. Customize the `Polymer()` JavaScript to add new properties or functionality to your element. Want some help getting started? Check out the [Polymer Developer Guide](https://www.polymer-project.org/1.0/docs/devguide/feature-overview.html) or see some examples from the [polymer-example-element](https://github.com/apowers313/polymer-example-element).
 2. Now if you run `npm run demo` you'll see your changes. And if you run `npm test` you'll notice... whoops! You broke the tests! Edit [test/open-element.html](test/open-element.html) to update your tests. Tests are using the [Web Component Tester](https://github.com/Polymer/web-component-tester), which uses [Mocha](http://mochajs.org/) as a test framework, [Chai](http://chaijs.com/) for assertions, and [Sinon](http://sinonjs.org/) for other stuff -- especially mocking servers. Don't forget to use `npm run testdebug` if your tests aren't doing what you expect.
 3. Repeat #1 and #2 until you have something cool. Or #2 then #1. It's up to you. Have fun!
-4. Edit [package.json](package.json), [bower.json](bower.json), and [yuidoc.json](yuidoc.json) to describe your package, have your email address, your version, etc.
+4. Edit [package.json](package.json), [bower.json](bower.json), [yuidoc.json](yuidoc.json), and [deploy-docs.sh](deploy-docs.sh) to describe your package, use your email address, your version, etc.
 5. Edit [README.md](README.md) and [LICENSE](LICENSE) to your liking
 6. Run `git commit -am "I'm committed"` and `git push origin master` to push your changes back to GitHub. Watch with delight as Travis and SauceLabs do their thing.
 7. Pat yourself on the back and drink a beer.
