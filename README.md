@@ -25,9 +25,17 @@ So why another template for Polymer elements? This one has three ideas behind it
 * Nifty badges already included for build status, [David](https://david-dm.org/) dependency status, and [Gitter](https://gitter.im)
 * Forking this repo means that as new features are added, they can be included in your project with a simple `git pull` request
 
+__If there are features or services that you think should be here, I am happy to take requests. Feel free to [submit an issue](https://github.com/apowers313/open-element-template/issues) or send in a pull request.__ 
+
 ## Setup Services
 1. Fork this repo
 	* Click `Fork` in the top right-hand corner of [this webpage](https://github.com/apowers313/open-element-template)
+	* Or `clone` the repo by running the following commands:
+		* Create a new repository called `new-project` on GitHub
+		* `mkdir new-project && cd new-project` -- make your new project directory
+		* `git clone https://github.com/apowers313/open-element-template.git .` -- clone it into the current (empty) directory of your new project (note the trailing '.')
+		* `git remote set-url origin https://github.com/yourname/new-project.git` -- change your GitHub remote to your project on GitHub
+		* `git push origin master` -- push the tempalte up to your repository
 1. Travis CI
 	* Login using Githubaccount by clicking `Sign in with GitHub` in the top right-hand corner of [Travis CI webpage](https://travis-ci.org/) 
 	* Click `+` next to `Repositories`
@@ -40,6 +48,7 @@ So why another template for Polymer elements? This one has three ideas behind it
 * `npm test` -- uses the [web component tester](https://github.com/Polymer/web-component-tester) to open browsers at SauceLabs and test your element on each of them
 * `npm run demo` -- shows your new element in action
 * `npm run testdebug` -- runs a single pass of the tests using your local copy of Chrome, and keeps Chrome open so that you can see the debug console and refresh to re-run tests
+* `npm run testlocal` -- runs tests in all browsers that are installed on your system
 * `npm run docs` -- generate docs for your components and store them in the ./docs directory
 * `npm run testdocs` -- generate docs for your components, and fire up a webserver and a browser to view them -- great for testing your docs as you are writing them
 
