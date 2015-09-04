@@ -1,14 +1,12 @@
 #!/bin/bash
 echo Using shell: $SHELL
+${SHELL} --version
 
 DRY_RUN=1
 # defaults to dry run unless "justdoit" is passed in
 if [ "$1" == "justdoit" ]; then
 	DRY_RUN=0
 fi
-
-INIT_DEFAULTS=1
-NON_DESTRUCTIVE=1
 
 function open_browser
 {
@@ -41,6 +39,7 @@ function do_config
 	export CXX="/usr/bin/g++ -I/opt/local/include" # fixes path bug for OSX using ports
 	run_cmd "npm install travis-encrypt"
 
+	rm -rf .configcache
 	mkdir -p .configcache
 	mkdir -p .configcache/demo
 	mkdir -p .configcache/test
