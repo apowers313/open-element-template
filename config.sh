@@ -1,3 +1,5 @@
+#!/bin/bash
+echo Using shell: $SHELL
 
 DRY_RUN=1
 # defaults to dry run unless "justdoit" is passed in
