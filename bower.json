@@ -4,7 +4,7 @@
   "authors": [
     "Adam Powers <apowers@ato.ms>"
   ],
-  "description": "Open element template",
+  "description": "A template for new open source Polymer elements",
   "main": "open-element.html",
   "keywords": [
     "web-components",

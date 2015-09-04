@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>open-element tests</title>
+    <title>{{element_name}} tests</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
@@ -10,18 +10,18 @@
     <script src="../../test-fixture/test-fixture-mocha.js"></script>
     <link rel="import" href="../../polymer/polymer.html">
     <link rel="import" href="../../test-fixture/test-fixture.html">
-    <link rel="import" href="../open-element.html">
+    <link rel="import" href="../{{element_name}}.html">
 </head>
 
 <body>
     <test-fixture id="testElement">
         <template>
-            <open-element></open-element>
+            <{{element_name}}></{{element_name}}>
         </template>
     </test-fixture>
     <test-fixture id="anotherTest">
         <template>
-            <open-element test-property="I like beer"></open-element>
+            <{{element_name}} test-property="I like beer"></{{element_name}}>
         </template>
     </test-fixture>
     <script>

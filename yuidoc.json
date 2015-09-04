@@ -1,11 +1,11 @@
 {
-  "name": "Polymer open-element-template",
-  "description": "A template for new Polymer elements",
+  "name": "{{project_name}}",
+  "description": "{{element_desc}}",
   "version": "0.0.1",
-  "url": "http://github.com/apowers313/open-element-template",
+  "url": "{{github_repo_url}}",
   "logo": "http://ato.ms/images/atomslogo.png",
   "options": {
     "outdir": "./docs"
   },
-  "exclude": "bower_components,node_modules,components,docs"
+  "exclude": "bower_components,node_modules,components,docs,coverage"
 }

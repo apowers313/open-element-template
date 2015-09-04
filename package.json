@@ -1,7 +1,7 @@
 {
   "name": "open-element-template",
   "version": "0.0.2",
-  "description": "Open element template",
+  "description": "A template for new open source Polymer elements",
   "main": "open-element.html",
   "keywords": [
     "web-component",
@@ -12,16 +12,15 @@
     "demo": "demo"
   },
   "scripts": {
-    "preinstall": "export CXX=\"/usr/bin/g++ -I/opt/local/include\"",
     "postinstall": "./node_modules/.bin/bower install",
     "demo": "bash -c 'sleep 1 && open http://localhost:8000/components/open-element/demo/index.html &' && ./node_modules/.bin/polyserve -p 8000",
     "test": "./node_modules/.bin/wct --simpleOutput --sauce default",
     "localtest": "./node_modules/.bin/wct --simpleOutput",
     "viewcoverage": "bash -c 'open coverage/index.html &'",
     "testdebug": "./node_modules/.bin/wct -p -l chrome",
-    "docs": "./node_modules/.bin/yuidoc --themedir ./node_modules/yuidoc-theme-blue -e .html,.js .",
+    "docs": "./node_modules/.bin/yuidoc -e .html,.js .",
     "deploydocs": "./deploy-docs.sh",
-    "create-travis-deploy-key": "bash -c 'open https://github.com/settings/tokens/new &' && echo \"Create a new GitHub token at: https://github.com/settings/tokens/new\" && bash -c 'read -p \"Enter GitHub Token: \" TOKEN && { echo -n \"    - secure: \"; ./node_modules/.bin/travis-encrypt -r `git config --get remote.origin.url | cut -d/ -f4-5 | cut -d. -f1` GH_TOKEN=$TOKEN | sed -n 2p | ./node_modules/.bin/strip-ansi; } >> .travis.yml'",
+    "create-travis-deploy-key": "bash -c 'open https://github.com/settings/tokens/new &' && echo \"Create a new GitHub token at: https://github.com/settings/tokens/new\" && bash -c 'read -p \"Enter GitHub Token: \" TOKEN && { echo -n \"    - secure: \"; ./node_modules/.bin/travis-encrypt -r `git config --get remote.origin.url | cut -d/ -f4-5 | cut -d. -f1` GITHUB_TOKEN=$TOKEN | sed -n 2p | ./node_modules/.bin/strip-ansi; } >> .travis.yml'",
     "testdocs": "/bin/bash -c 'sleep 2 && open http://localhost:5000 &'; ./node_modules/.bin/yuidoc --server 5000 -e .html,.js ."
   },
   "repository": {
@@ -41,8 +40,6 @@
   "devDependencies": {
     "coveralls": "^2.11.4",
     "polyserve": "^0.4.0",
-    "strip-ansi-cli": "^1.0.0",
-    "travis-encrypt": "^1.1.1",
     "web-component-tester": "^3.3.18",
     "web-component-tester-istanbul": "thedeeno/web-component-tester-istanbul",
     "yuidocjs": "^0.9.0"

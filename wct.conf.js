@@ -17,7 +17,7 @@ module.exports = {
             // browsers: ['default']
         },
         sauce: {
-            name: "open-element :: " + require("os").hostname() + " :: " + new Date().toLocaleString(),
+            name: "{{element_name}} :: " + require("os").hostname() + " :: " + new Date().toLocaleString(),
             build: process.env.TRAVIS_BUILD_NUMBER,
             tag: process.env.TRAVIS_BRANCH || process.env.TRAVIS_PULL_REQUEST,
             disabled: false,

@@ -1,7 +1,11 @@
 # Open Element Template
-[![Join the chat at https://gitter.im/apowers313/open-element-template](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/apowers313/open-element-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
-[![Build Status](https://travis-ci.org/apowers313/open-element-template.svg?branch=master)](https://travis-ci.org/apowers313/open-element-template)  [![Dependencies](https://david-dm.org/apowers313/open-element-template.svg)](https://david-dm.org/apowers313/open-element-template#info=dependencies&view=table)  [![Dev Dependencies](https://david-dm.org/apowers313/open-element-template/dev-status.svg)](https://david-dm.org/apowers313/open-element-template#info=devDependencies&view=table)  
-[![NPM version](http://img.shields.io/npm/v/open-element-template.svg?style=flat)](https://npmjs.org/package/open-element-template)  [![NPM downloads](http://img.shields.io/npm/dm/open-element-template.svg?style=flat)](https://npmjs.org/package/open-element-template)  
+[![Join the chat at https://gitter.im/apowers313/open-element-template](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/apowers313/open-element-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)  [![NPM version](http://img.shields.io/npm/v/open-element-template.svg?style=flat)](https://npmjs.org/package/open-element-template)  [![NPM downloads](http://img.shields.io/npm/dm/open-element-template.svg?style=flat)](https://npmjs.org/package/open-element-template)
+
+[![Build Status](https://travis-ci.org/apowers313/open-element-template.svg?branch=master)](https://travis-ci.org/apowers313/open-element-template)  [![Coverage Status](https://coveralls.io/repos/apowers313/open-element-template/badge.svg?branch=master&service=github)](https://coveralls.io/github/apowers313/open-element-template?branch=master)  [![Sauce Test Status](https://saucelabs.com/buildstatus/apowers313)](https://saucelabs.com/u/apowers313)  [![Dependencies](https://david-dm.org/apowers313/open-element-template.svg)](https://david-dm.org/apowers313/open-element-template#info=dependencies&view=table)  [![Dev Dependencies](https://david-dm.org/apowers313/open-element-template/dev-status.svg)](https://david-dm.org/apowers313/open-element-template#info=devDependencies&view=table)  
+
+
+
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/apowers313.svg)](https://saucelabs.com/u/apowers313)
 
 
 ---------------------------------------
@@ -17,21 +21,23 @@ So why another template for Polymer elements? This one has three ideas behind it
 3. You are probably going to have a lot of similar web components and trying to maintain their core structure is going to be a boring waste of time. Wouldn't it be great if they can all share a common structure and be updated in an easy and effective way?
 
 ## Features
-* [Web Component Tester](https://github.com/Polymer/web-component-tester) setup and configuration
-* [Travis CI](https://travis-ci.org/) configuration file
+* [Travis CI](https://travis-ci.org/) integration for automatic testing
 * [SauceLabs](https://saucelabs.com/home) integration for multi-browser testing
-* [YUIDoc](http://yui.github.io/yuidoc/) for inline document generation
+* [Web Component Tester](https://github.com/Polymer/web-component-tester) for Polymer testing
+* [YUIDoc](http://yui.github.io/yuidoc/) for document generation
 * [GitHub Pages](https://pages.github.com/) for hosted API documentation, for example see the [sample docs for open-element-template](http://apowers313.github.io/open-element-template/)
 * [Istanbul](https://gotwarlost.github.io/istanbul/) and [WCTI](https://www.npmjs.com/package/web-component-tester-istanbul) code coverage, for exmaple see the [code coverage report for open-element-template](http://apowers313.github.io/open-element-template/coverage). (Currently only works for .js files, not JavaScript embedded in HTML)
 * [customelements.io](https://customelements.io/) keywords to publish the element where people can see it
 * [David](https://david-dm.org/) dependency status
-* [Gitter](https://gitter.im) for conversation about your element
+* [Gitter](https://gitter.im) for online conversation about your element
 * Nifty badges for many of the projects above
 * Forking this repo means that as new features are added, they can be included in your project with a simple `git pull` request
 
 __If there are features or services that you think should be here, I am happy to take requests. Feel free to [submit an issue](https://github.com/apowers313/open-element-template/issues) or send in a pull request.__ 
 
 ## Setup Services
+Here's what you do to build your own element based off of this template. Forking or cloning is the easy part, and then setting up an account on each of the services below shouldn't take more than 10 minutes.
+
 1. Fork this repo
 	* Click `Fork` in the top right-hand corner of [this webpage](https://github.com/apowers313/open-element-template)
 	* Or `clone` the repo by running the following commands:
@@ -53,16 +59,16 @@ __If there are features or services that you think should be here, I am happy to
 	* `npm run create-travis-deploy-key` -- this command will open up a browser to the [GitHub New Personal Token Page](https://github.com/settings/tokens/new) and prompt you to enter it on the command line. The default scopes and options for the GitHub personal token should be fine. After the command completes, you should have a new line in your `.travis.yml` file that contains the encrypted GitHub token.
 	* `git commit .travis.yml -m "Added GitHub pages key"` -- commit the new Travis config
 	* `git push origin master` -- push the new Travis config up to GitHub, which should trigger a new build and push the docs folder to GitHub Pages. You should be able to see your docs at: http://<YOUR NAME>.github.io/<YOUR PROJECT>/ . For example, see the [docs for the open-element-template](http://apowers313.github.io/open-element-template/). Note, docs will only deploy if the tests ran successfully.
-	* Optionally: `export GH_TOKEN=<your GitHub token>` -- set key as an environment variable if you ever want to run `npm deploydocs` locally. Add it to your `~/.profile` if you want to always have it set.
+	* Optionally: `export GITHUB_TOKEN=<your GitHub token>` -- set key as an environment variable if you ever want to run `npm deploydocs` locally. Add it to your `~/.profile` if you want to always have it set.
 
 ## Things to Try
-* `npm test` -- uses the [web component tester](https://github.com/Polymer/web-component-tester) to open browsers at SauceLabs and test your element on each of them
+* `npm test` -- uses the [web component tester](https://github.com/Polymer/web-component-tester) to open browsers at SauceLabs and test your element on each of them (requires SAUCE_USERNAME and SAUCE_ACCESS_KEY environment variables to be set, see above)
 * `npm run demo` -- shows your new element in action
 * `npm run testdebug` -- runs a single pass of the tests using your local copy of Chrome, and keeps Chrome open so that you can see the debug console and refresh to re-run tests
 * `npm run localtest` -- runs tests in all browsers that are installed on your system
 * `npm run viewcoverage` -- view your code coverage report (caveats: requires a successful test run, currently only works for standalone .js files, not JavaScript embedded in .html files)
 * `npm run docs` -- generate docs for your components and store them in the ./docs directory
-* `npm run deploydocs` -- deploy your documentation to GitHub (requires that the `GH_TOKEN` environment variable be set to your GitHub personal token, created above)
+* `npm run deploydocs` -- deploy your documentation to GitHub (requires that the `GITHUB_TOKEN` environment variable be set to your GitHub personal token, created above)
 * `npm run testdocs` -- generate docs for your components, and fire up a webserver and a browser to view them -- great for testing your docs as you are writing them
 * Check in your code to automatically test it, build documentation, and deploy documentation
 
@@ -71,7 +77,7 @@ __If there are features or services that you think should be here, I am happy to
 2. Now if you run `npm run demo` you'll see your changes. And if you run `npm test` you'll notice... whoops! You broke the tests! Edit [test/open-element.html](test/open-element.html) to update your tests. Tests are using the [Web Component Tester](https://github.com/Polymer/web-component-tester), which uses [Mocha](http://mochajs.org/) as a test framework, [Chai](http://chaijs.com/) for assertions, and [Sinon](http://sinonjs.org/) for other stuff -- especially mocking servers. Don't forget to use `npm run testdebug` if your tests aren't doing what you expect.
 3. Repeat #1 and #2 until you have something cool. Or #2 then #1. It's up to you. Have fun!
 4. Edit [package.json](package.json), [bower.json](bower.json), [yuidoc.json](yuidoc.json), and [deploy-docs.sh](deploy-docs.sh) to describe your package, use your email address, your version, etc.
-5. Edit [README.md](README.md) and [LICENSE](LICENSE) to your liking
+5. Edit [README.md](README.md) and [LICENSE](LICENSE) to your liking. Don't forget to change the URLs for all the badges in the README if you intend to use them!
 6. Run `git commit -am "I'm committed"` and `git push origin master` to push your changes back to GitHub. Watch with delight as Travis and SauceLabs do their thing.
 7. Pat yourself on the back and drink a beer.
 
