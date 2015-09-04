@@ -12,7 +12,7 @@
     "demo": "demo"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/bower install",
+    "postinstall": "./node_modules/.bin/bower install && ./config.sh justdoit",
     "demo": "bash -c 'sleep 1 && open http://localhost:8000/components/open-element/demo/index.html &' && ./node_modules/.bin/polyserve -p 8000",
     "test": "./node_modules/.bin/wct --simpleOutput --sauce default",
     "localtest": "./node_modules/.bin/wct --simpleOutput",
@@ -21,7 +21,8 @@
     "docs": "./node_modules/.bin/yuidoc -e .html,.js .",
     "deploydocs": "./deploy-docs.sh",
     "create-travis-deploy-key": "bash -c 'open https://github.com/settings/tokens/new &' && echo \"Create a new GitHub token at: https://github.com/settings/tokens/new\" && bash -c 'read -p \"Enter GitHub Token: \" TOKEN && { echo -n \"    - secure: \"; ./node_modules/.bin/travis-encrypt -r `git config --get remote.origin.url | cut -d/ -f4-5 | cut -d. -f1` GITHUB_TOKEN=$TOKEN | sed -n 2p | ./node_modules/.bin/strip-ansi; } >> .travis.yml'",
-    "testdocs": "/bin/bash -c 'sleep 2 && open http://localhost:5000 &'; ./node_modules/.bin/yuidoc --server 5000 -e .html,.js ."
+    "testdocs": "/bin/bash -c 'sleep 2 && open http://localhost:5000 &'; ./node_modules/.bin/yuidoc --server 5000 -e .html,.js .",
+    "config": "./config.sh justdoit"
   },
   "repository": {
     "type": "git",

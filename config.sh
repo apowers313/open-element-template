@@ -544,5 +544,11 @@ if [ "$commit_and_push" == "y" -o "$commit_and_push" == "Y" ]; then
 fi
 
 echo "Self destructing... thank you and good-bye!"
-run_cmd "rm -rf config.sh"
+run_cmd "rm config.sh"
+
+run_cmd "npm uninstall handlebars-cmd"
+run_cmd "npm uninstall strip-ansi-cli"
+run_cmd "npm uninstall json"
+run_cmd "npm uninstall travis-encrypt"
+
 
