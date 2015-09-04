@@ -25,6 +25,9 @@ function run_cmd
 {
 	if [ $DRY_RUN -eq 1 ]; then
 		echo DRY RUN: \"$@\"
+	else
+		echo "Running: \"$@\""
+		$@
 	fi
 }
 
@@ -33,11 +36,11 @@ function do_config
 	echo "Installing some tools ..."
 	sleep 2
 
-	run_cmd "npm install handlebars-cmd"
-	run_cmd "npm install strip-ansi-cli"
-	run_cmd "npm install json"
+	npm install handlebars-cmd
+	npm install strip-ansi-cli
+	npm install json
 	export CXX="/usr/bin/g++ -I/opt/local/include" # fixes path bug for OSX using ports
-	run_cmd "npm install travis-encrypt"
+	npm install travis-encrypt
 
 	rm -rf .configcache
 	mkdir -p .configcache
@@ -170,7 +173,7 @@ function do_config
 	run_cmd "git remote set-url origin $github_repo_url"
 }
 
-if [ $INIT_DEFAULTS -eq 1 ]; then
+if [ "$INIT_DEFAULTS" == "1" ]; then
 	project_name="Open Element"
 	element_name="open-element-template"
 	element_desc="A template for new open source Polymer elements"
@@ -547,9 +550,9 @@ fi
 echo "Self destructing... thank you and good-bye!"
 run_cmd "rm config.sh"
 
-run_cmd "npm uninstall handlebars-cmd"
-run_cmd "npm uninstall strip-ansi-cli"
-run_cmd "npm uninstall json"
-run_cmd "npm uninstall travis-encrypt"
+npm uninstall handlebars-cmd
+npm uninstall strip-ansi-cli
+npm uninstall json
+npm uninstall travis-encrypt
 
 
