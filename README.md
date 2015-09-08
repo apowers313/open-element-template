@@ -10,13 +10,14 @@
 ## About
 Want to create your own custom HTML tag? Big fan of open source? Enjoy it when you have a mature development process? This is the project for you...
 
-Much like [Polymer boilerplate](https://github.com/webcomponents/polymer-boilerplate), [Polymer seed-element](https://github.com/polymerelements/seed-element), [generator element](https://github.com/webcomponents/generator-element), and others, this is a template for creating new custom web elements. Sorry for calling it "template", since that broadly means something else for web components.
+Much like [Polymer boilerplate](https://github.com/webcomponents/polymer-boilerplate), [Polymer seed-element](https://github.com/polymerelements/seed-element), [generator element](https://github.com/webcomponents/generator-element), and others, this is a template for creating new custom web elements. (Sorry for calling it "template" -- I realize that has other meanings for web components.)
 
 So why another template for Polymer elements? This one has three ideas behind it:
 
-1. It makes use of all the services that support open source projects, such as [Travis](https://travis-ci.org/) for testing, [SauceLabs](https://saucelabs.com/home) for cross-browser testing, some badges and other stuff. Figuring out how to setup and integrate these services can take time and isn't fun or productive.
-2. If you fork or clone from this repository, you can merge in new services and features into your component as they become available. You don't have to figure it out, just `git pull` to merge in the new features and you will get anything new that has been added. This can be new features, new documentation, new badges, etc.
-3. You are probably going to have a lot of similar web components and trying to maintain their core structure is going to be a boring waste of time. Wouldn't it be great if they can all share a common structure and be updated in an easy and effective way?
+1. It has __built-in support__ for the most important __services that are free open source projects__
+, such as [Travis](https://travis-ci.org/) for testing, [SauceLabs](https://saucelabs.com/home) for cross-browser testing, some badges and other stuff. Figuring out how to setup and integrate these services can take time and isn't fun or productive.
+2. If you fork or clone from this repository, you can merge in new services and features into your component as they become available. You don't have to figure it out, just `git pull` to __merge in new features and services__ and you will get anything new that has been added. This can be new features, new documentation, new badges, etc.
+3. You are probably going to have a lot of __similar web components__ and trying to maintain their __core structure__ is going to be a boring waste of time. Wouldn't it be great if they can all share a common structure and be updated in an easy and effective way?
 
 ## Features
 * [Travis CI](https://travis-ci.org/) integration for automatic testing
@@ -52,7 +53,7 @@ __If there are features or services that you think should be here, I am happy to
 * `npm run config` -- if you didn't complete configuration during installation, this is how you can kick it off again
 * Check in your code to automatically test it, build documentation, and deploy documentation
 
-## How to Build Your Custom Element
+## How to Develop Your Custom Element
 1. Edit [open-element.html](open-element.html). Add some HTML between the `<template>` tags to include new HTML in your element. Customize the `Polymer()` JavaScript to add new properties or functionality to your element. Want some help getting started? Check out the [Polymer Developer Guide](https://www.polymer-project.org/1.0/docs/devguide/feature-overview.html) or see some examples from the [polymer-example-element](https://github.com/apowers313/polymer-example-element).
 1. Now if you run `npm run demo` you'll see your changes. And if you run `npm test` you'll notice... whoops! You broke the tests! Edit [test/open-element.html](test/open-element.html) to update your tests. Tests are using the [Web Component Tester](https://github.com/Polymer/web-component-tester), which uses [Mocha](http://mochajs.org/) as a test framework, [Chai](http://chaijs.com/) for assertions, and [Sinon](http://sinonjs.org/) for other stuff -- especially mocking servers. Don't forget to use `npm run testdebug` if your tests aren't doing what you expect.
 1. Repeat #1 and #2 until you have something cool. Or #2 then #1. It's up to you. Have fun!
