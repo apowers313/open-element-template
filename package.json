@@ -1,5 +1,6 @@
 {
   "name": "open-element-template",
+  "version": "0.1.1",
   "description": "A template for new open source Polymer elements",
   "main": "open-element.html",
   "keywords": [
@@ -45,7 +46,7 @@
     "polyserve": "^0.4.0",
     "semantic-release": "^4.3.4",
     "web-component-tester": "^3.3.18",
-    "web-component-tester-istanbul": "thedeeno/web-component-tester-istanbul",
+    "web-component-tester-istanbul": "apowers313/web-component-tester-istanbul",
     "yuidocjs": "^0.9.0"
   }
 }
