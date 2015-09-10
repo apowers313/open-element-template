@@ -18,7 +18,7 @@
     "viewcoverage": "bash -c 'open coverage/index.html &'",
     "testdebug": "./node_modules/.bin/wct -p -l chrome",
     "docs": "./node_modules/.bin/yuidoc -e .html,.js .",
-    "deploydocs": "./deploy-docs.sh",
+    "deploydocs": "chmod 755 deploy-docs.sh && ./deploy-docs.sh",
     "create-travis-deploy-key": "bash -c 'open https://github.com/settings/tokens/new &' && echo \"Create a new GitHub token at: https://github.com/settings/tokens/new\" && bash -c 'read -p \"Enter GitHub Token: \" TOKEN && { echo -n \"    - secure: \"; ./node_modules/.bin/travis-encrypt -r `git config --get remote.origin.url | cut -d/ -f4-5 | cut -d. -f1` GH_TOKEN=$TOKEN | sed -n 2p | ./node_modules/.bin/strip-ansi; } >> .travis.yml'",
     "testdocs": "/bin/bash -c 'sleep 2 && open http://localhost:5000 &'; ./node_modules/.bin/yuidoc --server 5000 -e .html,.js .",
     "config": "./config.sh justdoit",
