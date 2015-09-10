@@ -1,5 +1,24 @@
-
 # Open Element Template
+
+<table>
+	<tr> 
+		<td>Chat</td> <td colspan=3><a href="https://gitter.im/apowers313/open-element-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/apowers313/open-element-template"></a></td> 
+	</tr>
+	<tr>
+		<td>Package</td> <td><a href="https://npmjs.org/package/open-element-template"><img src="http://img.shields.io/npm/v/open-element-template.svg?style=flat" alt="NPM version"></a></td> <td><a href="http://badge.fury.io/bo/open-element-template"><img src="https://badge.fury.io/bo/open-element-template.svg" alt="Bower version"></a>
+</td>  <td><a href="https://npmjs.org/package/open-element-template"><img src="http://img.shields.io/npm/dm/open-element-template.svg?style=flat" alt="NPM downloads"></a></td> 
+	</tr>
+	<tr>
+		<td>Dependencies</td> <td><a href="https://david-dm.org/apowers313/open-element-template#info=dependencies&view=table"><img src="https://david-dm.org/apowers313/open-element-template.svg" alt="Dependencies"></a></td> <td><a href="https://david-dm.org/apowers313/open-element-template#info=devDependencies&view=table"><img src="https://david-dm.org/apowers313/open-element-template/dev-status.svg" alt="Dev Dependencies"></a></td> <td></td> 
+	</tr>
+	<tr> 
+		<td>Build</td> <td><a href="https://travis-ci.org/apowers313/open-element-template"><img src="https://travis-ci.org/apowers313/open-element-template.svg?branch=master" alt="Build Status"></a></td> <td><a href="https://saucelabs.com/u/apowers313"><img src="https://saucelabs.com/buildstatus/apowers313" alt="Sauce Test Status"></a></td> <td><a href="https://coveralls.io/github/apowers313/open-element-template?branch=master"><img src="https://coveralls.io/repos/apowers313/open-element-template/badge.svg?branch=master&service=github" alt="Coverage Status"></a></td> 
+	</tr>
+	<tr> 
+		<td>Release</td> <td><a href="LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="MIT License"></a>
+</td> <td><a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt="Commitizen friendly"></a></td> <td><a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release"></a></td> 
+	</tr>
+</table>
 
 Browser Support<br>
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/apowers313.svg)](https://saucelabs.com/u/apowers313)
@@ -26,6 +45,8 @@ So why another template for Polymer elements? This one has three ideas behind it
 * [GitHub Pages](https://pages.github.com/) for hosted API documentation, for example see the [sample docs for open-element-template](http://apowers313.github.io/open-element-template/)
 * [Istanbul](https://gotwarlost.github.io/istanbul/) and [WCTI](https://www.npmjs.com/package/web-component-tester-istanbul) code coverage, for exmaple see the [code coverage report for open-element-template](http://apowers313.github.io/open-element-template/coverage). (Currently only works for .js files, not JavaScript embedded in HTML)
 * [Coveralls](https://coveralls.io/) code coverage reporting, based on the Istanbul report
+* [semantic-release](https://github.com/semantic-release/semantic-release) for automatic versioning, change log creation, and publishing
+* [Commitizen](http://commitizen.github.io/cz-cli/) for conventional commit messages and change logs
 * [customelements.io](https://customelements.io/) keywords to publish the element where people can see it
 * [David](https://david-dm.org/) dependency status
 * [Gitter](https://gitter.im) for online conversation about your element
@@ -50,6 +71,7 @@ __If there are features or services that you think should be here, I am happy to
 * `npm run deploydocs` -- deploy your documentation to GitHub (requires that the `GH_TOKEN` environment variable be set to your GitHub personal token, created above)
 * `npm run testdocs` -- generate docs for your components, and fire up a webserver and a browser to view them -- great for testing your docs as you are writing them
 * `npm run config` -- if you didn't complete configuration during installation, this is how you can kick it off again
+* `git cz -a` -- commit all changes using Commitizen
 * Check in your code to automatically test it, build documentation, and deploy documentation
 
 ## How to Develop Your Custom Element
@@ -57,7 +79,8 @@ __If there are features or services that you think should be here, I am happy to
 1. Now if you run `npm run demo` you'll see your changes. And if you run `npm test` you'll notice... whoops! You broke the tests! Edit [test/open-element.html](test/open-element.html) to update your tests. Tests are using the [Web Component Tester](https://github.com/Polymer/web-component-tester), which uses [Mocha](http://mochajs.org/) as a test framework, [Chai](http://chaijs.com/) for assertions, and [Sinon](http://sinonjs.org/) for other stuff -- especially mocking servers. Don't forget to use `npm run testdebug` if your tests aren't doing what you expect.
 1. Repeat #1 and #2 until you have something cool. Or #2 then #1. It's up to you. Have fun!
 1. Add documents to your code. It's pretty simple, but check out the [YUIDoc Syntax Reference](http://yui.github.io/yuidoc/syntax/) if you get stuck.
-1. Run `git commit -am "I'm committed"` and `git push origin master` to push your changes back to GitHub. Watch with delight as Travis and SauceLabs do their thing.
+1. Run `git cz -a` (make sure that you have [Commitizen](http://commitizen.github.io/cz-cli/) installed) and follow the instructions
+1. `git push origin master` to push your changes back to GitHub. Watch with delight as Travis and SauceLabs test your element on a wide variety of browsers, and semantic-release automatically bumps-up your version number, creates a change log and publishes the package to npm.
 1. Pat yourself on the back and drink a beer.
 
 ## Updating
