@@ -1,8 +1,26 @@
+
 # Open Element Template
-[![Join the chat at https://gitter.im/apowers313/open-element-template](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/apowers313/open-element-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)  [![NPM version](http://img.shields.io/npm/v/open-element-template.svg?style=flat)](https://npmjs.org/package/open-element-template)  [![NPM downloads](http://img.shields.io/npm/dm/open-element-template.svg?style=flat)](https://npmjs.org/package/open-element-template)
 
-[![Build Status](https://travis-ci.org/apowers313/open-element-template.svg?branch=master)](https://travis-ci.org/apowers313/open-element-template)  [![Coverage Status](https://coveralls.io/repos/apowers313/open-element-template/badge.svg?branch=master&service=github)](https://coveralls.io/github/apowers313/open-element-template?branch=master)  [![Sauce Test Status](https://saucelabs.com/buildstatus/apowers313)](https://saucelabs.com/u/apowers313)  [![Dependencies](https://david-dm.org/apowers313/open-element-template.svg)](https://david-dm.org/apowers313/open-element-template#info=dependencies&view=table)  [![Dev Dependencies](https://david-dm.org/apowers313/open-element-template/dev-status.svg)](https://david-dm.org/apowers313/open-element-template#info=devDependencies&view=table)  
+<table>
+	<tr> 
+		<td>Chat</td> <td colspan=3><a href="https://gitter.im/apowers313/open-element-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/apowers313/open-element-template"></a></td> 
+	</tr>
+	<tr>
+		<td>Package</td> <td><a href="LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="MIT License"></a>
+</td> <td><a href="https://npmjs.org/package/open-element-template"><img src="http://img.shields.io/npm/v/open-element-template.svg?style=flat" alt="NPM version"></a></td> <td><a href="https://npmjs.org/package/open-element-template"><img src="http://img.shields.io/npm/dm/open-element-template.svg?style=flat" alt="NPM downloads"></a></td> 
+	</tr>
+	<tr>
+		<td>Dependencies</td> <td><a href="https://david-dm.org/apowers313/open-element-template#info=dependencies&view=table"><img src="https://david-dm.org/apowers313/open-element-template.svg" alt="Dependencies"></a></td> <td><a href="https://david-dm.org/apowers313/open-element-template#info=devDependencies&view=table"><img src="https://david-dm.org/apowers313/open-element-template/dev-status.svg" alt="Dev Dependencies"></a></td> <td></td> 
+	</tr>
+	<tr> 
+		<td>Build</td> <td><a href="https://travis-ci.org/apowers313/open-element-template"><img src="https://travis-ci.org/apowers313/open-element-template.svg?branch=master" alt="Build Status"></a></td> <td><a href="https://saucelabs.com/u/apowers313"><img src="https://saucelabs.com/buildstatus/apowers313" alt="Sauce Test Status"></a></td> <td><a href="https://coveralls.io/github/apowers313/open-element-template?branch=master"><img src="https://coveralls.io/repos/apowers313/open-element-template/badge.svg?branch=master&service=github" alt="Coverage Status"></a></td> 
+	</tr>
+	<tr> 
+		<td>Release</td> <td></td> <td></td> <td></td> 
+	</tr>
+</table>
 
+Browser Support<br>
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/apowers313.svg)](https://saucelabs.com/u/apowers313)
 
 ---------------------------------------
@@ -48,7 +66,7 @@ __If there are features or services that you think should be here, I am happy to
 * `npm run localtest` -- runs tests in all browsers that are installed on your system
 * `npm run viewcoverage` -- view your code coverage report (caveats: requires a successful test run, currently only works for standalone .js files, not JavaScript embedded in .html files)
 * `npm run docs` -- generate docs for your components and store them in the ./docs directory
-* `npm run deploydocs` -- deploy your documentation to GitHub (requires that the `GITHUB_TOKEN` environment variable be set to your GitHub personal token, created above)
+* `npm run deploydocs` -- deploy your documentation to GitHub (requires that the `GH_TOKEN` environment variable be set to your GitHub personal token, created above)
 * `npm run testdocs` -- generate docs for your components, and fire up a webserver and a browser to view them -- great for testing your docs as you are writing them
 * `npm run config` -- if you didn't complete configuration during installation, this is how you can kick it off again
 * Check in your code to automatically test it, build documentation, and deploy documentation

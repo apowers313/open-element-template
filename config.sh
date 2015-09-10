@@ -84,7 +84,7 @@ function do_config
 	    -e "this.description = '$element_desc'" \
 	    -e "this.main = '$element_name.html'" \
 	    -e "this.scripts.demo = 'bash -c \\'sleep 1 && open http://localhost:8000/components/$element_name/demo/index.html &\\' && ./node_modules/.bin/polyserve -p 8000'" \
-	    -e "this.repository.url = 'git+$github_repo_url'" \
+	    -e "this.repository.url = '$github_repo_url'" \
 	    -e "this.author = '$git_email'" \
 	    -e "this.bugs.url = '$github_repo_url'" \
 	    -e "this.homepage = '$github_repo_url#readme'" > .configcache/package.json
@@ -110,7 +110,8 @@ function do_config
 	cat .travis.yml | grep -v secure: > .configcache/.travis.yml
 	{ echo -n "    - secure: "; ./node_modules/.bin/travis-encrypt -r $github_slug SAUCE_ACCESS_KEY=$saucelabs_account_key | sed -n 2p | ./node_modules/.bin/strip-ansi; } >> .configcache/.travis.yml
 	{ echo -n "    - secure: "; ./node_modules/.bin/travis-encrypt -r $github_slug SAUCE_USERNAME=$github_account | sed -n 2p | ./node_modules/.bin/strip-ansi; } >> .configcache/.travis.yml
-	{ echo -n "    - secure: "; ./node_modules/.bin/travis-encrypt -r $github_slug GITHUB_TOKEN=$github_token | sed -n 2p | ./node_modules/.bin/strip-ansi; } >> .configcache/.travis.yml
+	{ echo -n "    - secure: "; ./node_modules/.bin/travis-encrypt -r $github_slug GH_TOKEN=$github_token | sed -n 2p | ./node_modules/.bin/strip-ansi; } >> .configcache/.travis.yml
+	{ echo -n "    - secure: "; ./node_modules/.bin/travis-encrypt -r $github_slug NPM_TOKEN=$npm_token | sed -n 2p | ./node_modules/.bin/strip-ansi; } >> .configcache/.travis.yml
 
 	#####
 	# Create README.md with badges
@@ -154,7 +155,8 @@ function do_config
 	echo "that you will need for testing and creating releases:"
 	echo "SAUCE_USERNAME=$github_account"
 	echo "SAUCE_ACCESS_KEY=$saucelabs_account_key"
-	echo "GITHUB_TOKEN=$github_token"
+	echo "GH_TOKEN=$github_token"
+	echo "NPM_TOKEN=$npm_token"
 	echo ""
 	echo "They have been saved to .build.env, which will be ignored"
 	echo "by git."
@@ -165,7 +167,8 @@ function do_config
 	run_cmd "echo # $project_name config variables > .build.env"
 	run_cmd "echo export SAUCE_USERNAME=$github_account >> .build.env"
 	run_cmd "echo export SAUCE_ACCESS_KEY=$saucelabs_account_key >> .build.env"
-	run_cmd "echo export GITHUB_TOKEN=$github_token >> .build.env"
+	run_cmd "echo export GH_TOKEN=$github_token >> .build.env"
+	run_cmd "echo export NPM_TOKEN=$npm_token >> .build.env"
 
 	#####
 	# Commit
@@ -184,7 +187,8 @@ if [ "$INIT_DEFAULTS" == "1" ]; then
 	git_username='Adam Powers'
 	git_email='apowers@ato.ms'
 	saucelabs_account_key=$SAUCE_ACCESS_KEY
-	github_token=$GITHUB_TOKEN
+	github_token=$GH_TOKEN
+	npm_token=$NPM_TOKEN
 
 	do_config
 	exit 0
@@ -293,6 +297,37 @@ github_slug="$github_account/$github_repo"
 echo ""
 
 #####
+# NPM
+#####
+function create_npm_token
+{
+	echo "It appears that you aren't currently logged into a NPM account."
+	echo "You will need to login so that we can retrieve your NPM token"
+	echo "From your .npmrc file."
+	echo ""
+	echo "Running 'npm adduser':"
+	npm adduser
+	echo "Done"
+}
+
+guid_regex='^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$'
+if [ -e ~/.npmrc ]; then
+	# grep for token
+	npm_token=`grep authToken ~/.npmrc | cut -d= -f2`
+	if [[ ! $npm_token =~ $guid_regex ]]; then
+		create_npm_token
+	fi
+else
+	create_npm_token
+	npm_token=`grep authToken ~/.npmrc | cut -d= -f2`
+fi
+if [[ ! $npm_token =~ $guid_regex ]]; then 
+	echo "ERROR: we couldn't get the NPM token from your ~/.npmrc"
+	echo "We really need it... so we are exiting now."
+	echo "Bummer! Email me if you need help: apowers@ato.ms" 
+fi
+
+#####
 # Travis CI
 #####
 echo "You will need to use Travis CI for Continuous Integration"
@@ -348,7 +383,6 @@ if [ "$use_saucelabs" != "n" -o "$use_saucelabs" != "N" ]; then
 	echo "information."
 	open_browser 3 "https://saucelabs.com/account/profile"
 
-	guid_regex='^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$'
 	while [[ ! $saucelabs_account_key =~ $guid_regex ]]; do
 		read -p "Please enter your SauceLabs Account Key: " saucelabs_account_key
 		if [[ ! $saucelabs_account_key =~ $guid_regex ]]; then

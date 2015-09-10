@@ -1,6 +1,5 @@
 {
   "name": "open-element-template",
-  "version": "0.0.2",
   "description": "A template for new open source Polymer elements",
   "main": "open-element.html",
   "keywords": [
@@ -20,13 +19,14 @@
     "testdebug": "./node_modules/.bin/wct -p -l chrome",
     "docs": "./node_modules/.bin/yuidoc -e .html,.js .",
     "deploydocs": "./deploy-docs.sh",
-    "create-travis-deploy-key": "bash -c 'open https://github.com/settings/tokens/new &' && echo \"Create a new GitHub token at: https://github.com/settings/tokens/new\" && bash -c 'read -p \"Enter GitHub Token: \" TOKEN && { echo -n \"    - secure: \"; ./node_modules/.bin/travis-encrypt -r `git config --get remote.origin.url | cut -d/ -f4-5 | cut -d. -f1` GITHUB_TOKEN=$TOKEN | sed -n 2p | ./node_modules/.bin/strip-ansi; } >> .travis.yml'",
+    "create-travis-deploy-key": "bash -c 'open https://github.com/settings/tokens/new &' && echo \"Create a new GitHub token at: https://github.com/settings/tokens/new\" && bash -c 'read -p \"Enter GitHub Token: \" TOKEN && { echo -n \"    - secure: \"; ./node_modules/.bin/travis-encrypt -r `git config --get remote.origin.url | cut -d/ -f4-5 | cut -d. -f1` GH_TOKEN=$TOKEN | sed -n 2p | ./node_modules/.bin/strip-ansi; } >> .travis.yml'",
     "testdocs": "/bin/bash -c 'sleep 2 && open http://localhost:5000 &'; ./node_modules/.bin/yuidoc --server 5000 -e .html,.js .",
-    "config": "./config.sh justdoit"
+    "config": "./config.sh justdoit",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/apowers313/open-element-template.git"
+    "url": "https://github.com/apowers313/open-element-template.git"
   },
   "author": "apowers@ato.ms",
   "license": "MIT",
@@ -39,8 +39,11 @@
     "bower": "^1.5.2"
   },
   "devDependencies": {
+    "commitizen": "^1.0.4",
     "coveralls": "^2.11.4",
+    "cz-conventional-changelog": "^1.1.0",
     "polyserve": "^0.4.0",
+    "semantic-release": "^4.3.4",
     "web-component-tester": "^3.3.18",
     "web-component-tester-istanbul": "thedeeno/web-component-tester-istanbul",
     "yuidocjs": "^0.9.0"
