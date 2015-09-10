@@ -22,6 +22,7 @@ fi
 
 # If this is the root repository, use the default docs
 if [ "$INIT_DEFAULTS" == "1" ]; then
+	echo "USING DEFAULT DOCUMENTS"
 	git checkout master
 fi
 
