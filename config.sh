@@ -171,9 +171,20 @@ function do_config
 	run_cmd "echo export NPM_TOKEN=$npm_token >> .build.env"
 
 	#####
-	# Commit
+	# Set new master repo
 	#####
 	run_cmd "git remote set-url origin $github_repo_url"
+
+	#####
+	# Clean up
+	#####
+	echo "Self destructing... thank you and good-bye!"
+	run_cmd "rm config.sh"
+
+	npm uninstall handlebars-cmd
+	npm uninstall strip-ansi-cli
+	npm uninstall json
+	npm uninstall travis-encrypt
 }
 
 if [ "$INIT_DEFAULTS" == "1" ]; then
@@ -572,6 +583,9 @@ fi
 # this is where the real work gets done
 do_config
 
+#####
+# Commit
+#####
 read -n 1 -p "Done configuring, would you like to commit and push to GitHub now? [y/N] " commit_and_push
 echo ""
 echo ""
@@ -580,13 +594,5 @@ if [ "$commit_and_push" == "y" -o "$commit_and_push" == "Y" ]; then
 	run_cmd "github commit -am 'Initial commit'"
 	run_cmd "github push origin master"
 fi
-
-echo "Self destructing... thank you and good-bye!"
-run_cmd "rm config.sh"
-
-npm uninstall handlebars-cmd
-npm uninstall strip-ansi-cli
-npm uninstall json
-npm uninstall travis-encrypt
 
 

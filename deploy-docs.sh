@@ -20,6 +20,11 @@ if [ -z "$GH_REF" ]; then
 	exit 1
 fi
 
+# If this is the root repository, use the default docs
+if [ "$INIT_DEFAULTS" == "1" ]; then
+	git checkout master
+fi
+
 echo "Building docs ..."
 npm run docs
 
