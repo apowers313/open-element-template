@@ -1,25 +1,6 @@
 
 # Open Element Template
 
-<table>
-	<tr> 
-		<td>Chat</td> <td colspan=3><a href="https://gitter.im/apowers313/open-element-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/apowers313/open-element-template"></a></td> 
-	</tr>
-	<tr>
-		<td>Package</td> <td><a href="LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="MIT License"></a>
-</td> <td><a href="https://npmjs.org/package/open-element-template"><img src="http://img.shields.io/npm/v/open-element-template.svg?style=flat" alt="NPM version"></a></td> <td><a href="https://npmjs.org/package/open-element-template"><img src="http://img.shields.io/npm/dm/open-element-template.svg?style=flat" alt="NPM downloads"></a></td> 
-	</tr>
-	<tr>
-		<td>Dependencies</td> <td><a href="https://david-dm.org/apowers313/open-element-template#info=dependencies&view=table"><img src="https://david-dm.org/apowers313/open-element-template.svg" alt="Dependencies"></a></td> <td><a href="https://david-dm.org/apowers313/open-element-template#info=devDependencies&view=table"><img src="https://david-dm.org/apowers313/open-element-template/dev-status.svg" alt="Dev Dependencies"></a></td> <td></td> 
-	</tr>
-	<tr> 
-		<td>Build</td> <td><a href="https://travis-ci.org/apowers313/open-element-template"><img src="https://travis-ci.org/apowers313/open-element-template.svg?branch=master" alt="Build Status"></a></td> <td><a href="https://saucelabs.com/u/apowers313"><img src="https://saucelabs.com/buildstatus/apowers313" alt="Sauce Test Status"></a></td> <td><a href="https://coveralls.io/github/apowers313/open-element-template?branch=master"><img src="https://coveralls.io/repos/apowers313/open-element-template/badge.svg?branch=master&service=github" alt="Coverage Status"></a></td> 
-	</tr>
-	<tr> 
-		<td>Release</td> <td></td> <td></td> <td></td> 
-	</tr>
-</table>
-
 Browser Support<br>
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/apowers313.svg)](https://saucelabs.com/u/apowers313)
 
