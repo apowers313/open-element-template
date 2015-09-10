@@ -28,7 +28,7 @@ module.exports = {
             reporters: ["text-summary", "lcov", "html"],
             include: [
                 "**/*.js",
-                "**/*.html"
+                "open-element.html"
             ],
             exclude: [
                 "/polymer/polymer.js",
