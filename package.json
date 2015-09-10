@@ -12,7 +12,7 @@
     "demo": "demo"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/bower install && chmod 755 deploy-docs.sh && ./config.sh justdoit",
+    "postinstall": "./node_modules/.bin/bower install && pwd && chmod 755 ./deploy-docs.sh && ls -laF ./deploy-docs.sh && ./config.sh justdoit",
     "demo": "bash -c 'sleep 1 && open http://localhost:8000/components/open-element/demo/index.html &' && ./node_modules/.bin/polyserve -p 8000",
     "test": "./node_modules/.bin/wct --simpleOutput --sauce default",
     "localtest": "./node_modules/.bin/wct --simpleOutput",
