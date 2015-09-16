@@ -26,7 +26,7 @@ Browser Support<br>
 ---------------------------------------
 
 ## About
-Want to create your own custom HTML tag? Big fan of open source? Enjoy it when you have a mature development process? This is the project for you...
+Want to create your own custom HTML tag? Big fan of open source? Sleep better when you have automation watching over your code to make sure it isn't embarassingly broken? This is the project for you...
 
 Much like [Polymer boilerplate](https://github.com/webcomponents/polymer-boilerplate), [Polymer seed-element](https://github.com/polymerelements/seed-element), [generator element](https://github.com/webcomponents/generator-element), and others, this is a template for creating new custom web elements. (Sorry for calling it "template" -- I realize that has other meanings for web components.)
 
@@ -35,7 +35,7 @@ So why another template for Polymer elements? This one has three ideas behind it
 1. It has __built-in support__ for the most important __services that are free open source projects__
 , such as [Travis](https://travis-ci.org/) for testing, [SauceLabs](https://saucelabs.com/home) for cross-browser testing, some badges and other stuff. Figuring out how to setup and integrate these services can take time and isn't fun or productive.
 2. If you fork or clone from this repository, you can merge in new services and features into your component as they become available. You don't have to figure it out, just `git pull` to __merge in new features and services__ and you will get anything new that has been added. This can be new features, new documentation, new badges, etc.
-3. You are probably going to have a lot of __similar web components__ and trying to maintain their __core structure__ is going to be a boring waste of time. Wouldn't it be great if they can all share a common structure and be updated in an easy and effective way?
+3. You are probably going to have a lot of __similar web components__ (the [Polymer Project has 93](https://elements.polymer-project.org/) at last count) and trying to maintain their __core structure__ is going to be a boring waste of time. Wouldn't it be great if they can all share a common structure and be updated in an easy and effective way?
 
 ## Features
 * [Travis CI](https://travis-ci.org/) integration for automatic testing
