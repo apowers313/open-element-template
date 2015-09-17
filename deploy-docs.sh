@@ -39,8 +39,9 @@ if [ -z "$PKG_VERSION" ]; then
 	echo "Version: " $PKG_VERSION
 	node_modules/.bin/conventional-changelog -o CHANGELOG.md -p angular -r 0
 	git add CHANGELOG.md
-	git commit CHANGELOG.md -m "Automatically updating CHANGELOG.md via conventional-changelog"
-	git push "https://${GH_TOKEN}@${GH_REF}" master
+	git commit CHANGELOG.md -m "Automatically updating CHANGELOG.md via conventional-changelog for build ${TRAVIS_BUILD_NUMBER}"
+	echo "Pushing to: " "https://xxxx@${GH_REF}"
+	git push --force "https://${GH_TOKEN}@${GH_REF}" master
 fi
 
 echo "Deploy Docs: Building docs ..."
@@ -61,7 +62,7 @@ git add .
 # The first and only commit to this new Git repo contains all the
 # files present with the commit message "Deploy docs to GitHub Pages".
 echo "Deploy Docs: Doing git commit..."
-git commit -m "Deploy docs to GitHub Pages"
+git commit -m "Deploy docs to GitHub Pages from build ${TRAVIS_BUILD_NUMBER}"
 
 # Force push from the current repo's master branch to the remote
 # repo's gh-pages branch. (All previous history on the gh-pages branch
