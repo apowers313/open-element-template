@@ -30,7 +30,9 @@ fi
 
 # inside this git repo we'll pretend to be a new user
 echo "Deploy Docs: Doing git config..."
+echo "Git Username: {{git_username}}"
 git config user.name "{{git_username}}"
+echo "Git Email: {{git_email}}"
 git config user.email "{{git_email}}"
 
 echo "Creating CHANGELOG.md ..."
