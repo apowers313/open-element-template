@@ -17,6 +17,7 @@ after_success:
   - export $(cat .to_export_back)
   - 'cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
   - npm run semantic-release
+  - npm run deploydocs
 env:
   global:
     - secure: dt52USP0MSK6AgY6pr2WsbcpbzGH4Ot0cMiMl9cJoH1EQauka6ofcihy52MPmMU/5Ad/ARlsj+QyHs25OhQoaWQitZGaIktfiegsF9KqEJimdNBwnx8+bvAWK8PFvNLGh3JMULX19ek0SyqIbR2mlFMxyOwN2VyjjoOcn4dsjQDMOGLS21o0w3y8YQ5oTDgmPD8saJJgBCNDh/cmJPKakcT2gYaeyzf1fkBZLL8NJ1bIeAV+/IQgovm/ydGKJ15nskqvMCJ9YyX4X/Kwq+0pqOecTRLsHDNoF3ESDMrw9KeqGQ0ZYL/klaSGu/gkzdO6m1x4WGg6FM7CYEeKsiyWU28qZxDl/hiFH3bRus1ZHrdc3/95ozq0/T/Onrl/LqVkAWnENfi5BLnbOiNNT5wBTNJP+xS6PZcVcC1xS6DH7zNMJ1bTYcB6FNJoJYCQO6bDV4v9zZKSwfNhUpM2F+jzLSW/9juPbozYvfjU3nOXgY/rC8TQaQiwS6hlQE1HPDGFiApl92QlJQzGpuQyAWvxoePPhq44CHfLlOKzN82Hjc2e0bVPQs6oFhdF5ZEWLlLLoo1yXiIBvw456RWyM6Muf8tlyllku7/8By6PvbK5y32WVXYeCQezzt4hoxCa+bO8xYo/Pjq21A4tfxJYY/jpJhQoCJfuYttziAMcHFgXJdo=
