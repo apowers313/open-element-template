@@ -189,6 +189,7 @@ function do_config
 }
 
 if [ "$INIT_DEFAULTS" == "1" ]; then
+	echo "Detected home repo, running config.sh with default options ..."
 	project_name="Open Element"
 	element_name="open-element-template"
 	element_desc="A template for new open source Polymer elements"
