@@ -22,7 +22,7 @@
     "create-travis-deploy-key": "bash -c 'open https://github.com/settings/tokens/new &' && echo \"Create a new GitHub token at: https://github.com/settings/tokens/new\" && bash -c 'read -p \"Enter GitHub Token: \" TOKEN && { echo -n \"    - secure: \"; ./node_modules/.bin/travis-encrypt -r `git config --get remote.origin.url | cut -d/ -f4-5 | cut -d. -f1` GH_TOKEN=$TOKEN | sed -n 2p | ./node_modules/.bin/strip-ansi; } >> .travis.yml'",
     "testdocs": "/bin/bash -c 'sleep 2 && open http://localhost:5000 &'; ./node_modules/.bin/yuidoc --server 5000 -e .html,.js .",
     "config": "./config.sh justdoit",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && chmod 755 npm run deploydocs && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
