@@ -28,6 +28,21 @@ if [ "$INIT_DEFAULTS" == "1" ]; then
 	git checkout -f
 fi
 
+# inside this git repo we'll pretend to be a new user
+echo "Deploy Docs: Doing git config..."
+git config user.name "{{git_username}}"
+git config user.email "{{git_email}}"
+
+echo "Creating CHANGELOG.md ..."
+if [ -z "$PKG_VERSION" ]; then
+	PKG_VERSION=`cat package.json | grep version`
+	echo "Version: " $PKG_VERSION
+	node_modules/.bin/conventional-changelog -o CHANGELOG.md -p angular -r 0
+	git add CHANGELOG.md
+	git commit CHANGELOG.md -m "Automatically updating CHANGELOG.md via conventional-changelog"
+	git push origin master
+fi
+
 echo "Deploy Docs: Building docs ..."
 npm run docs
 
@@ -41,11 +56,6 @@ echo "Deploy Docs: Uploading docs to: " $GH_REF ...
 # go to the out directory and create a new git repo
 cd docs
 git init
-
-# inside this git repo we'll pretend to be a new user
-echo "Deploy Docs: Doing git config..."
-git config user.name "{{git_username}}"
-git config user.email "{{git_email}}"
 git add .
 
 # The first and only commit to this new Git repo contains all the
