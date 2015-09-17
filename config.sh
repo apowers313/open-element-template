@@ -39,7 +39,7 @@ function do_config
 	npm install handlebars-cmd
 	npm install strip-ansi-cli
 	npm install json
-	export CXX="/usr/bin/g++ -I/opt/local/include" # fixes path bug for OSX using ports
+	export CXX="/usr/bin/g++ -I/opt/local/include" # fixes path bug for OSX using macports
 	npm install travis-encrypt
 
 	rm -rf .configcache
@@ -152,11 +152,12 @@ function do_config
 	echo "Saving environment ..."
 	echo ""
 	echo "This script has created some environment variables" 
-	echo "that you will need for testing and creating releases:"
-	echo "SAUCE_USERNAME=$github_account"
-	echo "SAUCE_ACCESS_KEY=$saucelabs_account_key"
-	echo "GH_TOKEN=$github_token"
-	echo "NPM_TOKEN=$npm_token"
+	echo "that you will need for testing and creating releases."
+	# Removing so that this information doesn't end up in Travis CI logs
+	# echo "SAUCE_USERNAME=$github_account"
+	# echo "SAUCE_ACCESS_KEY=$saucelabs_account_key"
+	# echo "GH_TOKEN=$github_token"
+	# echo "NPM_TOKEN=$npm_token"
 	echo ""
 	echo "They have been saved to .build.env, which will be ignored"
 	echo "by git."
@@ -565,8 +566,9 @@ echo "GitHub Repo: " $github_repo
 echo "GitHub Slug: " $github_slug
 echo "Git Username: " $git_username
 echo "Git Email: " $git_username
-echo "SauceLabs Account Key: " $saucelabs_account_key
-echo "GitHub Personal Access Token: " $github_token
+# Removing so that they don't end up in Travis CI logs
+# echo "SauceLabs Account Key: " $saucelabs_account_key
+# echo "GitHub Personal Access Token: " $github_token
 echo ""
 echo "*** Please read this over carefully -- after you move on, there is no going back ***"
 echo "(unless you clone the repo again)"
