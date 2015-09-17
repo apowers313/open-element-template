@@ -1,0 +1,345 @@
+{
+    "project": {
+        "name": "{{project_name}}",
+        "description": "{{element_desc}}",
+        "version": "0.0.1",
+        "url": "{{github_repo_url}}",
+        "logo": "http://ato.ms/images/atomslogo.png",
+        "exclude": "bower_components,node_modules,components,docs,coverage"
+    },
+    "files": {
+        "bower_components/test-fixture/test-fixture-mocha.js": {
+            "name": "bower_components/test-fixture/test-fixture-mocha.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "bower_components/webcomponentsjs/CustomElements.js": {
+            "name": "bower_components/webcomponentsjs/CustomElements.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "bower_components/webcomponentsjs/CustomElements.min.js": {
+            "name": "bower_components/webcomponentsjs/CustomElements.min.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "bower_components/webcomponentsjs/HTMLImports.js": {
+            "name": "bower_components/webcomponentsjs/HTMLImports.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "bower_components/webcomponentsjs/HTMLImports.min.js": {
+            "name": "bower_components/webcomponentsjs/HTMLImports.min.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "bower_components/webcomponentsjs/MutationObserver.js": {
+            "name": "bower_components/webcomponentsjs/MutationObserver.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "bower_components/webcomponentsjs/MutationObserver.min.js": {
+            "name": "bower_components/webcomponentsjs/MutationObserver.min.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "bower_components/webcomponentsjs/ShadowDOM.js": {
+            "name": "bower_components/webcomponentsjs/ShadowDOM.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "bower_components/webcomponentsjs/ShadowDOM.min.js": {
+            "name": "bower_components/webcomponentsjs/ShadowDOM.min.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "bower_components/webcomponentsjs/webcomponents-lite.js": {
+            "name": "bower_components/webcomponentsjs/webcomponents-lite.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "bower_components/webcomponentsjs/webcomponents-lite.min.js": {
+            "name": "bower_components/webcomponentsjs/webcomponents-lite.min.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "bower_components/webcomponentsjs/webcomponents.js": {
+            "name": "bower_components/webcomponentsjs/webcomponents.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "bower_components/webcomponentsjs/webcomponents.min.js": {
+            "name": "bower_components/webcomponentsjs/webcomponents.min.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "open-element.html": {
+            "name": "open-element.html",
+            "modules": {},
+            "classes": {
+                "{{element_name}}": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "test.js": {
+            "name": "test.js",
+            "modules": {},
+            "classes": {
+                "getInitialValue": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "{{element_name}}": {
+            "name": "{{element_name}}",
+            "shortname": "{{element_name}}",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "open-element.html",
+            "line": 2,
+            "description": "{{element_name}}\n{{element_desc}}\n\nDocuments for Polymer can be found here:\n* [Polymer Base API](http://polymer.github.io/polymer/)\n* [Polymer Developer Guide](https://www.polymer-project.org/1.0/docs/devguide/feature-overview.html)\n\nFor information on this documentation syntax, see:\n[the YUIDoc syntax](http://yui.github.io/yuidoc/syntax/)"
+        },
+        "getInitialValue": {
+            "name": "getInitialValue",
+            "shortname": "getInitialValue",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "test.js",
+            "line": 1,
+            "description": "This is just a helper for initializing the testProperty. \nSince Istanbul currently only supports .js files (and not .html), only this code will show up in the code coverage report."
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "bower_components/test-fixture/test-fixture-mocha.js",
+            "line": 1,
+            "license": "Copyright (c) 2015 The Polymer Project Authors. All rights reserved.\nThis code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\nThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\nThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\nCode distributed by Google as part of the polymer project is also\nsubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt",
+            "class": "{{element_name}}"
+        },
+        {
+            "file": "bower_components/webcomponentsjs/CustomElements.js",
+            "line": 1,
+            "license": "Copyright (c) 2014 The Polymer Project Authors. All rights reserved.\nThis code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\nThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\nThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\nCode distributed by Google as part of the polymer project is also\nsubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt",
+            "class": "{{element_name}}"
+        },
+        {
+            "file": "bower_components/webcomponentsjs/CustomElements.min.js",
+            "line": 1,
+            "license": "Copyright (c) 2014 The Polymer Project Authors. All rights reserved.\nThis code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\nThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\nThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\nCode distributed by Google as part of the polymer project is also\nsubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt",
+            "class": "{{element_name}}"
+        },
+        {
+            "file": "bower_components/webcomponentsjs/HTMLImports.js",
+            "line": 1,
+            "license": "Copyright (c) 2014 The Polymer Project Authors. All rights reserved.\nThis code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\nThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\nThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\nCode distributed by Google as part of the polymer project is also\nsubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt",
+            "class": "{{element_name}}"
+        },
+        {
+            "file": "bower_components/webcomponentsjs/HTMLImports.min.js",
+            "line": 1,
+            "license": "Copyright (c) 2014 The Polymer Project Authors. All rights reserved.\nThis code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\nThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\nThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\nCode distributed by Google as part of the polymer project is also\nsubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt",
+            "class": "{{element_name}}"
+        },
+        {
+            "file": "bower_components/webcomponentsjs/MutationObserver.js",
+            "line": 1,
+            "license": "Copyright (c) 2014 The Polymer Project Authors. All rights reserved.\nThis code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\nThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\nThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\nCode distributed by Google as part of the polymer project is also\nsubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt",
+            "class": "{{element_name}}"
+        },
+        {
+            "file": "bower_components/webcomponentsjs/MutationObserver.min.js",
+            "line": 1,
+            "license": "Copyright (c) 2014 The Polymer Project Authors. All rights reserved.\nThis code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\nThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\nThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\nCode distributed by Google as part of the polymer project is also\nsubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt",
+            "class": "{{element_name}}"
+        },
+        {
+            "file": "bower_components/webcomponentsjs/ShadowDOM.js",
+            "line": 1,
+            "license": "Copyright (c) 2014 The Polymer Project Authors. All rights reserved.\nThis code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\nThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\nThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\nCode distributed by Google as part of the polymer project is also\nsubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt",
+            "class": "{{element_name}}"
+        },
+        {
+            "file": "bower_components/webcomponentsjs/ShadowDOM.min.js",
+            "line": 1,
+            "license": "Copyright (c) 2014 The Polymer Project Authors. All rights reserved.\nThis code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\nThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\nThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\nCode distributed by Google as part of the polymer project is also\nsubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt",
+            "class": "{{element_name}}"
+        },
+        {
+            "file": "bower_components/webcomponentsjs/webcomponents-lite.js",
+            "line": 1,
+            "license": "Copyright (c) 2014 The Polymer Project Authors. All rights reserved.\nThis code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\nThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\nThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\nCode distributed by Google as part of the polymer project is also\nsubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt",
+            "class": "{{element_name}}"
+        },
+        {
+            "file": "bower_components/webcomponentsjs/webcomponents-lite.min.js",
+            "line": 1,
+            "license": "Copyright (c) 2014 The Polymer Project Authors. All rights reserved.\nThis code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\nThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\nThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\nCode distributed by Google as part of the polymer project is also\nsubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt",
+            "class": "{{element_name}}"
+        },
+        {
+            "file": "bower_components/webcomponentsjs/webcomponents.js",
+            "line": 1,
+            "license": "Copyright (c) 2014 The Polymer Project Authors. All rights reserved.\nThis code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\nThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\nThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\nCode distributed by Google as part of the polymer project is also\nsubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt",
+            "class": "{{element_name}}"
+        },
+        {
+            "file": "bower_components/webcomponentsjs/webcomponents.min.js",
+            "line": 1,
+            "license": "Copyright (c) 2014 The Polymer Project Authors. All rights reserved.\nThis code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt\nThe complete set of authors may be found at http://polymer.github.io/AUTHORS.txt\nThe complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt\nCode distributed by Google as part of the polymer project is also\nsubject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt",
+            "class": "{{element_name}}"
+        },
+        {
+            "file": "open-element.html",
+            "line": 31,
+            "description": "Just a testProperty to show how properties work in Polymer.\nIt is probably pretty safe to delete this, or comment it out\nand keep it around as a reference.",
+            "itemtype": "property",
+            "name": "testProperty",
+            "type": "String",
+            "default": "\"this is the initial value\"",
+            "class": "{{element_name}}"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: license",
+            "line": " bower_components/test-fixture/test-fixture-mocha.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " bower_components/webcomponentsjs/CustomElements.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " bower_components/webcomponentsjs/CustomElements.min.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " bower_components/webcomponentsjs/HTMLImports.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " bower_components/webcomponentsjs/HTMLImports.min.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " bower_components/webcomponentsjs/MutationObserver.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " bower_components/webcomponentsjs/MutationObserver.min.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " bower_components/webcomponentsjs/ShadowDOM.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " bower_components/webcomponentsjs/ShadowDOM.min.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " bower_components/webcomponentsjs/webcomponents-lite.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " bower_components/webcomponentsjs/webcomponents-lite.min.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " bower_components/webcomponentsjs/webcomponents.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " bower_components/webcomponentsjs/webcomponents.min.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " bower_components/test-fixture/test-fixture-mocha.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " bower_components/webcomponentsjs/CustomElements.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " bower_components/webcomponentsjs/CustomElements.min.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " bower_components/webcomponentsjs/HTMLImports.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " bower_components/webcomponentsjs/HTMLImports.min.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " bower_components/webcomponentsjs/MutationObserver.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " bower_components/webcomponentsjs/MutationObserver.min.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " bower_components/webcomponentsjs/ShadowDOM.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " bower_components/webcomponentsjs/ShadowDOM.min.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " bower_components/webcomponentsjs/webcomponents-lite.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " bower_components/webcomponentsjs/webcomponents-lite.min.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " bower_components/webcomponentsjs/webcomponents.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " bower_components/webcomponentsjs/webcomponents.min.js:1"
+        }
+    ]
+}
