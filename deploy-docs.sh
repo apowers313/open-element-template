@@ -40,7 +40,7 @@ if [ -z "$PKG_VERSION" ]; then
 	node_modules/.bin/conventional-changelog -o CHANGELOG.md -p angular -r 0
 	git add CHANGELOG.md
 	git commit CHANGELOG.md -m "Automatically updating CHANGELOG.md via conventional-changelog"
-	git push origin master
+	git push "https://${GH_TOKEN}@${GH_REF}" master
 fi
 
 echo "Deploy Docs: Building docs ..."
