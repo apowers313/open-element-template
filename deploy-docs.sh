@@ -35,16 +35,16 @@ git config user.name "{{git_username}}"
 echo "Git Email: {{git_email}}"
 git config user.email "{{git_email}}"
 
-echo "Creating CHANGELOG.md ..."
-if [ -z "$PKG_VERSION" ]; then
-	PKG_VERSION=`cat package.json | grep version`
-	echo "Version: " $PKG_VERSION
-	node_modules/.bin/conventional-changelog -o CHANGELOG.md -p angular -r 0
-	git add CHANGELOG.md
-	git commit CHANGELOG.md -m "Automatically updating CHANGELOG.md via conventional-changelog for build ${TRAVIS_BUILD_NUMBER}"
-	echo "Pushing to: " "https://xxxx@${GH_REF}"
-	git push --force "https://${GH_TOKEN}@${GH_REF}" master
-fi
+# echo "Creating CHANGELOG.md ..."
+# if [ -z "$PKG_VERSION" ]; then
+# 	PKG_VERSION=`cat package.json | grep version`
+# 	echo "Version: " $PKG_VERSION
+# 	node_modules/.bin/conventional-changelog -o CHANGELOG.md -p angular -r 0
+# 	git add CHANGELOG.md
+# 	git commit CHANGELOG.md -m "Automatically updating CHANGELOG.md via conventional-changelog for build ${TRAVIS_BUILD_NUMBER}"
+# 	echo "Pushing to: " "https://xxxx@${GH_REF}"
+# 	git push --force "https://${GH_TOKEN}@${GH_REF}" master
+# fi
 
 echo "Deploy Docs: Building docs ..."
 npm run docs
