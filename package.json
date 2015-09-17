@@ -1,6 +1,5 @@
 {
   "name": "open-element-template",
-  "version": "0.1.1",
   "description": "A template for new open source Polymer elements",
   "main": "open-element.html",
   "keywords": [
