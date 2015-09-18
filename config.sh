@@ -119,21 +119,33 @@ function do_config
 	echo "Updating README.md ..."
 	echo "# $project_name" > .configcache/README.md
 	echo "" >> .configcache/README.md
-	echo $gitter_badge >> .configcache/README.md
-	echo $travis_badge >> .configcache/README.md
-	echo $coveralls_badge >> .configcache/README.md
-	echo $saucelabs_small_badge >> .configcache/README.md
+	echo "<table><tr><td>Community</td>" >> .configcache/README.md
+	echo "<td>$gitter_badge</td>" >> .configcache/README.md
+	echo "<td>$forkability_badge</td" >> .configcache/README.md
+	echo "<td>$license_badge</td" >> .configcache/README.md
+	echo "</tr><tr><td>Package</td>" >> .configcache/README.md
+	echo "<td>$npm_badge</td>" >> .configcache/README.md
+	echo "<td>$bower_badge</td> " >> .configcache/README.md
+	echo "<td>$downloads_badge</td>" >> .configcache/README.md
+	echo "</tr><tr><td>Dependencies</td>" >> .configcache/README.md
+	echo "<td>$david_dep_badge</td>" >> .configcache/README.md
+	echo "<td>$david_devdep_badge</td>" >> .configcache/README.md
+	echo "<td></td>" >> .configcache/README.md
+	echo "</tr><tr><td>Build</td>" >> .configcache/README.md
+	echo "<td>$travis_badge</td>" >> .configcache/README.md
+	echo "<td>$saucelabs_small_badge</td>" >> .configcache/README.md
+	echo "<td>$coveralls_badge</td>" >> .configcache/README.md
+	echo "</tr><tr><td>Release</td>" >> .configcache/README.md
+	echo "<td>$commitizen_badge</td>" >> .configcache/README.md
+	echo "<td>$semantic_release_badge</td>" >> .configcache/README.md
+	echo "<td></td></tr></table" >> .configcache/README.md
+	echo "" >> .configcache/README.md
 	echo $saucelabs_big_badge >> .configcache/README.md
-	echo $david_dep_badge >> .configcache/README.md
-	echo $david_devdep_badge >> .configcache/README.md
-	echo $license_badge >> .configcache/README.md
-	echo $npm_badge >> .configcache/README.md
-	echo $downloads_badge >> .configcache/README.md
-
 	echo "" >> .configcache/README.md
 	echo "$element_desc" >> .configcache/README.md
 	echo "" >> .configcache/README.md
 	echo "[Documentation](http://$github_account.github.io/$github_repo/)" >> .configcache/README.md
+	echo "" >> .configcache/README.md
 	echo "[Istanbul Coverage Report](http://$github_account.github.io/$github_repo/coverage/)" >> .configcache/README.md
 
 	#####
@@ -202,6 +214,21 @@ if [ "$INIT_DEFAULTS" == "1" ]; then
 	saucelabs_account_key=$SAUCE_ACCESS_KEY
 	github_token=$GH_TOKEN
 	npm_token=$NPM_TOKEN
+	
+	gitter_badge="<a href=\"https://gitter.im/$github_slug?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge\"><img src=\"https://badges.gitter.im/Join%20Chat.svg\" alt=\"Join the chat at https://gitter.im/$github_slug\"></a>"
+	travis_badge="<a href=\"https://travis-ci.org/$github_slug\"><img src=\"https://travis-ci.org/$github_slug.svg?branch=master\" alt=\"Build Status\"></a>"
+	coveralls_badge="<a href=\"https://coveralls.io/github/$github_slug?branch=master\"><img src=\"https://coveralls.io/repos/$github_slug/badge.svg?branch=master&service=github\" alt=\"Coverage Status\"></a>"
+	saucelabs_small_badge="<a href=\"https://saucelabs.com/u/$github_account\"><img src=\"https://saucelabs.com/buildstatus/$github_account\" alt=\"Sauce Test Status\"></a>"
+	saucelabs_big_badge="[![Sauce Test Status](https://saucelabs.com/browser-matrix/$github_account.svg)](https://saucelabs.com/u/$github_account)"
+	david_dep_badge="<a href=\"https://david-dm.org/$github_slug#info=dependencies&view=table\"><img src=\"https://david-dm.org/$github_slug.svg\" alt=\"Dependencies\"></a>"
+	david_devdep_badge="<a href=\"https://david-dm.org/$github_slug#info=devDependencies&view=table\"><img src=\"https://david-dm.org/$github_slug/dev-status.svg\" alt=\"Dev Dependencies\"></a>"
+	license_badge="<a href=\"LICENSE\"><img src=\"http://img.shields.io/badge/license-MIT-blue.svg?style=flat\" alt=\"MIT License\"></a>"
+	forkability_badge="<a href=\"https://basicallydan.github.io/forkability/?u=$github_account&r=$github_repo\"><img alt=\"This is a forkable respository\" src=\"https://img.shields.io/badge/forkable-yes-brightgreen.svg\"></a>"
+	commitizen_badge="<a href=\"http://commitizen.github.io/cz-cli/\"><img src=\"https://img.shields.io/badge/commitizen-friendly-brightgreen.svg\" alt=\"Commitizen friendly\"></a>"
+	semantic_release_badge="<a href=\"https://github.com/semantic-release/semantic-release\"><img src=\"https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg\" alt=\"semantic-release\"></a>"
+	bower_badge="<a href=\"http://badge.fury.io/bo/$github_repo\"><img src=\"https://badge.fury.io/bo/$github_repo.svg\" alt=\"Bower version\"></a>"
+	npm_badge="<a href=\"https://npmjs.org/package/$github_repo\"><img src=\"http://img.shields.io/npm/v/$github_repo.svg?style=flat\" alt=\"NPM version\"></a>"
+	downloads_badge="<a href=\"http://npm-stat.com/charts.html?package=$github_repo\"><img src=\"http://img.shields.io/npm/dm/$github_repo.svg?style=flat\" alt=\"NPM downloads\"></a>"
 
 	do_config
 	exit 0
@@ -482,14 +509,14 @@ read -n 1 -p "Gitter Badge (enables online chat for your project)? [Y/n] " gitte
 echo ""
 echo ""
 if [ "$gitter_badge" != "n" -a "$gitter_badge" != "N" ]; then
-	gitter_badge="[![Join the chat at https://gitter.im/apowers313/open-element-template](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/apowers313/open-element-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)"
+	gitter_badge="<a href=\"https://gitter.im/$github_slug?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge\"><img src=\"https://badges.gitter.im/Join%20Chat.svg\" alt=\"Join the chat at https://gitter.im/$github_slug\"></a>"
 fi
 
 read -n 1 -p "Travis CI Build Status Badge? [Y/n] " travis_badge
 echo ""
 echo ""
 if [ "$travis_badge" != "n" -a "$travis_badge" != "N" ]; then
-	travis_badge="[![Build Status](https://travis-ci.org/apowers313/open-element-template.svg?branch=master)](https://travis-ci.org/apowers313/open-element-template)"
+	travis_badge="<a href=\"https://travis-ci.org/$github_slug\"><img src=\"https://travis-ci.org/$github_slug.svg?branch=master\" alt=\"Build Status\"></a>"
 fi
 
 if [ "$use_coveralls" != "n" -o "$use_coveralls" != "N" ]; then
@@ -497,7 +524,7 @@ if [ "$use_coveralls" != "n" -o "$use_coveralls" != "N" ]; then
 	echo ""
 	echo ""
 	if [ "$coveralls_badge" != "n" -a "$coveralls_badge" != "N" ]; then
-		coveralls_badge="[![Coverage Status](https://coveralls.io/repos/apowers313/open-element-template/badge.svg?branch=master&service=github)](https://coveralls.io/github/apowers313/open-element-template?branch=master)"
+		coveralls_badge="<a href=\"https://coveralls.io/github/$github_slug?branch=master\"><img src=\"https://coveralls.io/repos/$github_slug/badge.svg?branch=master&service=github\" alt=\"Coverage Status\"></a>"
 	fi
 fi
 
@@ -506,14 +533,14 @@ if [ "$use_saucelabs" != "n" -o "$use_saucelabs" != "N" ]; then
 	echo ""
 	echo ""
 	if [ "$saucelabs_small_badge" != "n" -a "$saucelabs_small_badge" != "N" ]; then
-		saucelabs_small_badge="[![Sauce Test Status](https://saucelabs.com/buildstatus/apowers313)](https://saucelabs.com/u/apowers313)"
+		saucelabs_small_badge="<a href=\"https://saucelabs.com/u/$github_account\"><img src=\"https://saucelabs.com/buildstatus/$github_account\" alt=\"Sauce Test Status\"></a>"
 	fi
 
 	read -n 1 -p "SauceLabs Build Status Big Badge (a matrix of test status against all browsers)? [Y/n] " saucelabs_big_badge
 	echo ""
 	echo ""
 	if [ "$saucelabs_big_badge" != "n" -a "$saucelabs_big_badge" != "N" ]; then
-		saucelabs_big_badge="[![Sauce Test Status](https://saucelabs.com/browser-matrix/apowers313.svg)](https://saucelabs.com/u/apowers313)"
+		saucelabs_big_badge="[![Sauce Test Status](https://saucelabs.com/browser-matrix/$github_account.svg)](https://saucelabs.com/u/$github_account)"
 	fi
 fi
 
@@ -521,35 +548,63 @@ read -n 1 -p "David DM Dependencies Badge? [Y/n] " david_dep_badge
 echo ""
 echo ""
 if [ "$david_dep_badge" != "n" -a "$david_dep_badge" != "N" ]; then
-	david_dep_badge="[![Dependencies](https://david-dm.org/apowers313/open-element-template.svg)](https://david-dm.org/apowers313/open-element-template#info=dependencies&view=table)"
+	david_dep_badge="<a href=\"https://david-dm.org/$github_slug#info=dependencies&view=table\"><img src=\"https://david-dm.org/$github_slug.svg\" alt=\"Dependencies\"></a>"
 fi
 
 read -n 1 -p "David DM Development Dependencies Badge? [Y/n] " david_devdep_badge
 echo ""
 echo ""
 if [ "$david_devdep_badge" != "n" -a "$david_devdep_badge" != "N" ]; then
-	david_devdep_badge="[![Dev Dependencies](https://david-dm.org/apowers313/open-element-template/dev-status.svg)](https://david-dm.org/apowers313/open-element-template#info=devDependencies&view=table) "
+	david_devdep_badge="<a href=\"https://david-dm.org/$github_slug#info=devDependencies&view=table\"><img src=\"https://david-dm.org/$github_slug/dev-status.svg\" alt=\"Dev Dependencies\"></a>"
 fi
 
 read -n 1 -p "License Badge? [Y/n] " license_badge
 echo ""
 echo ""
 if [ "$license_badge" != "n" -a "$license_badge" != "N" ]; then
-	license_badge="[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)"
+	license_badge="<a href=\"LICENSE\"><img src=\"http://img.shields.io/badge/license-MIT-blue.svg?style=flat\" alt=\"MIT License\"></a>"
+fi
+
+read -n 1 -p "Forkability Badge? [Y/n] " forkability_badge
+echo ""
+echo ""
+if [ "$forkability_badge" != "n" -a "$forkability_badge" != "N" ]; then
+	forkability_badge="<a href=\"https://basicallydan.github.io/forkability/?u=$github_account&r=$github_repo\"><img alt=\"This is a forkable respository\" src=\"https://img.shields.io/badge/forkable-yes-brightgreen.svg\"></a>"
+fi
+
+read -n 1 -p "Commitizen Badge? [Y/n] " commitizen_badge
+echo ""
+echo ""
+if [ "$commitizen_badge" != "n" -a "$commitizen_badge" != "N" ]; then
+	commitizen_badge="<a href=\"http://commitizen.github.io/cz-cli/\"><img src=\"https://img.shields.io/badge/commitizen-friendly-brightgreen.svg\" alt=\"Commitizen friendly\"></a>"
+fi
+
+read -n 1 -p "Semantic Release Badge? [Y/n] " semantic_release_badge
+echo ""
+echo ""
+if [ "$semantic_release_badge" != "n" -a "$semantic_release_badge" != "N" ]; then
+	semantic_release_badge="<a href=\"https://github.com/semantic-release/semantic-release\"><img src=\"https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg\" alt=\"semantic-release\"></a>"
+fi
+
+read -n 1 -p "Bower Version Badge? [Y/n] " bower_badge
+echo ""
+echo ""
+if [ "$bower_badge" != "n" -a "$bower_badge" != "N" ]; then
+	bower_badge="<a href=\"http://badge.fury.io/bo/$github_repo\"><img src=\"https://badge.fury.io/bo/$github_repo.svg\" alt=\"Bower version\"></a>"
 fi
 
 read -n 1 -p "NPM Version Badge? [Y/n] " npm_badge
 echo ""
 echo ""
 if [ "$npm_badge" != "n" -a "$npm_badge" != "N" ]; then
-	npm_badge="[![NPM downloads](http://img.shields.io/npm/dm/open-element-template.svg?style=flat)](https://npmjs.org/package/open-element-template)"
+	npm_badge="<a href=\"https://npmjs.org/package/$github_repo\"><img src=\"http://img.shields.io/npm/v/$github_repo.svg?style=flat\" alt=\"NPM version\"></a>"
 fi
 
 read -n 1 -p "NPM Downloads Badge? [Y/n] " downloads_badge
 echo ""
 echo ""
 if [ "$downloads_badge" != "n" -a "$downloads_badge" != "N" ]; then
-	downloads_badge="[![NPM downloads](http://img.shields.io/npm/dm/open-element-template.svg?style=flat)](https://npmjs.org/package/open-element-template)"
+	downloads_badge="<a href=\"http://npm-stat.com/charts.html?package=$github_repo\"><img src=\"http://img.shields.io/npm/dm/$github_repo.svg?style=flat\" alt=\"NPM downloads\"></a>"
 fi
 
 
