@@ -121,8 +121,8 @@ function do_config
 	echo "" >> .configcache/README.md
 	echo "<table><tr><td>Community</td>" >> .configcache/README.md
 	echo "<td>$gitter_badge</td>" >> .configcache/README.md
-	echo "<td>$forkability_badge</td" >> .configcache/README.md
-	echo "<td>$license_badge</td" >> .configcache/README.md
+	echo "<td>$forkability_badge</td>" >> .configcache/README.md
+	echo "<td>$license_badge</td>" >> .configcache/README.md
 	echo "</tr><tr><td>Package</td>" >> .configcache/README.md
 	echo "<td>$npm_badge</td>" >> .configcache/README.md
 	echo "<td>$bower_badge</td> " >> .configcache/README.md
@@ -138,7 +138,7 @@ function do_config
 	echo "</tr><tr><td>Release</td>" >> .configcache/README.md
 	echo "<td>$commitizen_badge</td>" >> .configcache/README.md
 	echo "<td>$semantic_release_badge</td>" >> .configcache/README.md
-	echo "<td></td></tr></table" >> .configcache/README.md
+	echo "<td></td></tr></table>" >> .configcache/README.md
 	echo "" >> .configcache/README.md
 	echo $saucelabs_big_badge >> .configcache/README.md
 	echo "" >> .configcache/README.md
@@ -214,7 +214,7 @@ if [ "$INIT_DEFAULTS" == "1" ]; then
 	saucelabs_account_key=$SAUCE_ACCESS_KEY
 	github_token=$GH_TOKEN
 	npm_token=$NPM_TOKEN
-	
+
 	gitter_badge="<a href=\"https://gitter.im/$github_slug?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge\"><img src=\"https://badges.gitter.im/Join%20Chat.svg\" alt=\"Join the chat at https://gitter.im/$github_slug\"></a>"
 	travis_badge="<a href=\"https://travis-ci.org/$github_slug\"><img src=\"https://travis-ci.org/$github_slug.svg?branch=master\" alt=\"Build Status\"></a>"
 	coveralls_badge="<a href=\"https://coveralls.io/github/$github_slug?branch=master\"><img src=\"https://coveralls.io/repos/$github_slug/badge.svg?branch=master&service=github\" alt=\"Coverage Status\"></a>"
